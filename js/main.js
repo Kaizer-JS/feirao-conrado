@@ -207,6 +207,11 @@ function iniciarRevelacao() {
     return;
   }
 
+  /* threshold 0 (e não 0.12) por causa do celular: os blocos de detalhe passam
+     de 2.400px de altura numa tela de 844px, então "12% do elemento visível"
+     só acontecia depois de ~290px de rolagem — o visitante via uma faixa preta
+     vazia antes do conteúdo aparecer. Com 0, revela assim que o bloco encosta
+     na área visível, em qualquer altura de elemento. */
   const observador = new IntersectionObserver(
     (entradas) => {
       entradas.forEach((entrada) => {
@@ -216,10 +221,40 @@ function iniciarRevelacao() {
         }
       });
     },
-    { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
+    { rootMargin: "0px 0px -8% 0px", threshold: 0 }
   );
 
   alvos.forEach((el) => observador.observe(el));
+
+  /* Rede de segurança: se a página abrir já rolada (recarregar no meio, voltar
+     pelo histórico, link direto para uma seção) ou se a pessoa passar rápido
+     demais por um trecho, o observer pode não registrar a entrada e o bloco
+     ficaria invisível para sempre. Aqui, tudo que já passou pela tela aparece.
+     O ouvinte se remove sozinho quando não sobra mais nada escondido. */
+  const revelarOQueJaPassou = () => {
+    document.querySelectorAll("[data-revelar]:not(.visivel)").forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight) {
+        el.classList.add("visivel");
+        observador.unobserve(el);
+      }
+    });
+    if (!document.querySelector("[data-revelar]:not(.visivel)")) {
+      window.removeEventListener("scroll", aoRolar);
+    }
+  };
+
+  let agendado = false;
+  const aoRolar = () => {
+    if (agendado) return;
+    agendado = true;
+    requestAnimationFrame(() => {
+      agendado = false;
+      revelarOQueJaPassou();
+    });
+  };
+
+  window.addEventListener("scroll", aoRolar, { passive: true });
+  window.addEventListener("load", revelarOQueJaPassou);
 }
 
 /* ══════════════════════════════════════════════════ acordeão "como funciona"
@@ -272,8 +307,9 @@ function iniciarMarquise() {
 }
 
 /* ═══════════════════════════════════════ contagem animada dos números do feirão
-   Anima uma vez cada vez que a barra entra na tela. Enquanto a pessoa continua
-   nela, não repete; só volta a contar depois de sair e voltar. */
+   Conta uma única vez, quando a barra aparece, e o número FICA no valor final.
+   Antes ele voltava para zero toda vez que a barra saía da tela — na prática
+   os números passavam quase todo o tempo mostrando "+0 / 0% / R$ 0 mil / 0+". */
 function iniciarContadores() {
   const grupos = document.querySelectorAll("[data-contador-grupo]");
   if (!grupos.length) return;
@@ -314,41 +350,49 @@ function iniciarContadores() {
     });
   };
 
-  const resetarGrupo = (grupo) => {
-    const itens = grupo.querySelectorAll("[data-contador]");
-    itens.forEach((el) => escrever(el, 0));
+  const zerarGrupo = (grupo) => {
+    grupo.querySelectorAll("[data-contador]").forEach((el) => escrever(el, 0));
   };
 
-  if (!("IntersectionObserver" in window)) {
-    grupos.forEach((grupo) =>
-      grupo.querySelectorAll("[data-contador]").forEach((el) => escrever(el, Number(el.dataset.valor) || 0))
+  const mostrarValorFinal = (grupo) => {
+    grupo.querySelectorAll("[data-contador]").forEach((el) =>
+      escrever(el, Number(el.dataset.valor) || 0)
     );
+  };
+
+  // Sem suporte a observer ou com "reduzir movimento": já mostra o número cheio.
+  const semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (semMovimento || !("IntersectionObserver" in window)) {
+    grupos.forEach(mostrarValorFinal);
     return;
   }
 
   grupos.forEach((grupo) => {
-    let visivel = false;
-
     const observador = new IntersectionObserver(
       (entradas) => {
         entradas.forEach((entrada) => {
-          if (entrada.isIntersecting && !visivel) {
-            visivel = true;
-            animarGrupo(grupo);
-          } else if (!entrada.isIntersecting && visivel) {
-            visivel = false;
-            resetarGrupo(grupo);
-          }
+          if (!entrada.isIntersecting) return;
+          observador.unobserve(entrada.target); // conta uma vez e para por aqui
+          animarGrupo(grupo);
         });
       },
-      {
-        threshold: 0.15,
-        rootMargin: "-10px 0px -10px 0px"
-      }
+      // threshold 0: dispara assim que a barra encosta na tela, independente
+      // de ela ser mais alta que o visor (acontece no celular, empilhada).
+      { threshold: 0, rootMargin: "0px 0px -12% 0px" }
     );
 
-    resetarGrupo(grupo);
+    zerarGrupo(grupo); // a contagem precisa de um ponto de partida
     observador.observe(grupo);
+
+    /* Se a página abrir já rolada na altura da barra, o observer pode não
+       registrar a entrada — aí os números ficariam travados em zero. */
+    setTimeout(() => {
+      const r = grupo.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        observador.unobserve(grupo);
+        animarGrupo(grupo);
+      }
+    }, 600);
   });
 }
 
