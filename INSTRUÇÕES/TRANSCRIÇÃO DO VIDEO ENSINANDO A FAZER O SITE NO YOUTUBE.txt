@@ -1,0 +1,240 @@
+The website that you are seeing on screen has been built by Claude code and this is the exact same website that we will be building by the end of this video. I will be revealing all the steps that one has to take to take that first draft that AI generates that looks more like an AI slop all the way to a premium looking website like the one I just now shared.00:24
+
+It is an eightstep process that anyone can use and apply to build an insanely beautiful and premium looking website. It does not matter if you're building it for a restaurant or if you're building it for an e-commerce store, the process still remains the same. For those of you who don't know me, my name is Yashika Chen and I am an AI automation expert.00:41
+
+I have been in the no code AI space for more than 2 and 1/2 years now. I run my own agency, Automates AI, wherein we help businesses use AI to automate their manual processes. For anyone interested in working with my agency, the link to our website is in the description. So, now that you know me, let's get started. Now while the goal in our mind is clear that we want a website that looks good and feels premium, it is extremely important for us to first understand what exactly makes a website feel premium.01:12
+
+So if I were to break it down into seven different categories, I would say that the first thing that makes a website feel good as compared to one that doesn't is the visual hierarchy. So this includes having a perfect hierarchy, having enough white space so that the eye can easily read through and having grid consistency.01:35
+
+The second is typography. Now this is not just about which font you choose. It is also about pairing different fonts. It is also about using different sizes so that the user can easily read and enhancing the overall readability of the website. Because at the end of the day, we want to convey the information using our website.01:56
+
+We just don't want that it looks good, but it's extremely difficult for the other person to interpret what the website is about. The next is color and imagery. So, we want to have a nice color palette which is consistent. We want to use highquality visuals and maintain a consistent style. Now, the fourth point is something that actually makes a website an experience which is motions and interactions.02:21
+
+So having micro interactions, purposeful animation, purposeful motion really takes the website to the next level. Then there's design system consistency. For example, things like buttons, cards, icons, spacing rules. The next one is performance and responsiveness. We don't want that our website looks good, but it doesn't load quickly on the user's device.02:45
+
+We want it to be responsive across different devices. And last but not the least, trust and conversion. We want to have clear call to actions. We want to have a clear user journey, social proof, personality, accessibility. And once a website has all of these seven, it makes it feel premium. So throughout the video, we are going to focus on these pointers.03:08
+
+We're going to make sure that our website checks all of these boxes. So now that this is clear, let's go ahead and set up Claude. Now I want you to understand this one thing that the clawed chat that you use is for your everyday tasks asking you questions getting normal things done but when you actually want to code may be a website maybe a web app or whatever that is where we have to switch from claude to claude code.03:36
+
+So it is indeed a product by claude but it excels at coding. It is an AI coding assistant. The process still remains the same. You give it a prompt, it does things for you. You don't have to code, but you do have to switch from chat to code in order to make a website. Now, there are many different ways using which you can use clot code.03:58
+
+You can use it from the web, from the terminal. It's completely fine. You can choose whatever you feel like. You can even download it. But the one that I prefer is using it inside of an IDE or a code editor. And that in this case is going to be VS Code. So all you have to do is you have to search for Visual Studio Code.04:18
+
+Again, it's free to use. It's open source. You just have to download it in your system. May be Windows, maybe Mac. So why I prefer this is because I can easily see the structure of my project, how many code files I have, etc. And then I can have AI on the other side. So basically giving me complete visibility of my project.04:39
+
+So once you have installed visual studio code simply come over to extension and here you have to search for claude code. So basically claude code is an extension that you can download within this code editor. So simply select it install it then you will spot claud's icon at the top here. Just click on it and that should open up claude code for you.04:58
+
+When you're using it for the first time you will have to sign into your claude account and then you will be all set. Then head over to files here. If you do not have a folder opened, just click on open folder and simply create a new folder. You can name it whatever you want and [music] create it. So that any files we create throughout the process, any code files, all of them are stored within that one folder.05:23
+
+So going back to claude, we're going to close the extra stuff out. And here is our claude code chat. Very similar to your claw chat. You send it a message and you get a response. Now, one thing we're going to do here is we are going to switch the model. So, I'm going to use Oppus 4.8 and I'm going to set the effort as high. All right.05:43
+
+So, we are all set. Now, right now, your clawed code setup is like every other person's claude code setup. So, it is at the default settings kind of. And you must have heard that AI generates very similar type of websites. It generates AI slop and everything looks very very same. Now in that case how do you stand out? Now that brings me to the first rule that is going to make our website actually stand out and look good which is we are going to kill the AI slop by giving it skills.06:18
+
+Yes, just like humans claude can also learn. So out of the box every AI website looks the same. So same purple gradients, same inter font and it's very easy to tell that it is AI slop. And in order to get out of that, in order to make it think better, be unique, we are going to install design skills.06:38
+
+And that is what will make your website stand out. Now, I found this one GitHub repository which has basically researched all the different ways of making claw code at front-end design and it has included all of it in this particular repository. And this is the list right here. Some of them are skills, some of them are MCPs, some of them are even normal configurations which you can copy paste.07:05
+
+Now, I wouldn't recommend that you install all of these within cloud code and it's going to make it an extremely amazing front-end designer. No, we're not going to do that because it might just confuse claude code and it would also consume a lot of context and tokens and reduce efficiency.07:24
+
+So what we are going to do is we're going to handpick the ones we like. The reason why I like this GitHub project is because it brings everything together. You don't have to open 10 different web pages and search differently. Everything is in front of your eyes and you can easily choose which ones you want. Obviously I will include the link to this GitHub page in the description below and you can also open it on your end.07:47
+
+The first one right here which is called front-end design is basically a skill by Anthropic the parent company of Claude. It is a skill that they have released that basically makes Claude good at front end design. So this skill which is an official skill basically tells Claude to pick an actual aesthetic direction before writing the code and it also doesn't let it use the same inter font with the purple gradient and the rounded cards.08:14
+
+So it picks a direction. It requires real typography pairing. It blocks generic components and enforces CSS variables and cohesive color systems which covers some of these points right here. So installing this skill inside of your Claude code workspace is a no-brainer. So to install this skill, you simply have to copy this.08:35
+
+You have to head back to Claude Code and you can simply ask it to install this skill for me in this project. Or if you want to install it for your entire workspace, you can also tell it that install this skill such that it works across every project. That way you don't have to install it again and again. Simply paste it and send it. It's going to run the commands to install it for you.08:59
+
+Okay, so the skill has been installed. Now to access it, you will have to start a new conversation. And if you click on this icon right here, you should be able to scroll down and [music] spot the skill right here. So slashfrontend design. So meaning whenever Claude is working on the front- end design, it is going to refer to this skill which gives it instructions that makes it kill the AI slob and generate better designs.09:24
+
+So this one is done. Now another one that I would personally recommend that you install is the UI UX Pro Max skill. So if you even click on this one, you will see that so many people have liked this skill and so many people are already using this. So it provides design intelligence for building professional UI UX across multiple platforms and frameworks.09:49
+
+It also has industry specific reasoning rules. For example, recommended patterns for let's say a healthcare landing page for example. Then it has 84 UI styles. You must have heard about these different color palettes, font pairing, text tags, etc. So again, it's a good skill for our claude code workspace and installing it again is the same process.10:12
+
+You copy this and you ask claude to install this such that I can access it across different projects and I think it is a plugin and not a skill. So it is going to install a plug-in. So let's send it. Now based on your use case, if you find any other that you like, you can install it. It's completely fine.10:34
+
+But I am going to just stick to those two for the moment. They also have animation and motion related skills in case you're interested. They have UIUX intelligence ones, for example, Google design skills. So really up to you, Figma related skills. So, I'll put the link to this GitHub page in the description and you can go through it and it has been installed again.10:55
+
+We're going to start a fresh conversation. And if I go here, we have the skill right here. Beautiful. So, that kills the AI slow. We're already one step ahead. The next step would be to plan the website. Yes, we're not going to ask you to start building it right away. First, we're going to plan the website.11:15
+
+It's going to plan the pages, the sections, the content, even the design system, the color palettes, the overall aesthetic direction we're going with. And once we have the plan in place, then we're going to start building. So for that, what you have to do is you have to select the plan mode. In this mode, it is not going to generate any code.11:36
+
+It will only put all of its brain power into thinking or planning. So I've simply told it that the goal is to build a website for the cliffs which is a luxury Airbnb located along Australia's southern coastline. Then I have included the primary objective of the website showcasing the place and encouraging the visitors to book a stay.11:58
+
+Then you can mention any notes that you have in mind. The website should feel calm, refined, premium, immersive. Every design should support the single objective of inspiring them to click through the Airbnb and book their stay. Similarly, you can tell it about how the copy of the website should sound like.12:17
+
+Basically, anything that you have in mind, you can tell it. Make sure that you focus more on what you're looking for instead of how it should do it. So, we have clearly mentioned what we are looking for and we are going to send it and let's see the plan it comes up with. So it is asking us some questions. So what should I build this with? So it is recommending using HTML CSS and JS which is JavaScript or nextJS and Tailwind or Astro plus Tailwind.12:47
+
+If you don't really know which one you want to go with, you can just select other and you can ask it to choose the one that fits the best. [music] Then it is asking if we have any real content like the photos, the copy, the Airbnb listing link. Now here's the thing. This is a hypothetical setup for me.13:05
+
+So I don't have any of it but you can tell it that yes I do have it and I will provide you with the links or the photos etc. So let me select I have the link but not the photos. [music] Then it is asking how much motion and interactivity do you want. So let me select cinematic and immersive.13:23
+
+If you want to use a mix of both or if you have any other idea you can select other and you can type it out. So let me submit it. Then it's asking for the Airbnb listing URL. So let me just paste it [music] here. So I'll just paste Airbnb's URL. Now it's asking for the location. Similarly, it is going to ask you all the questions. Just give it the answers.13:41
+
+So I'm going to select the location. It's asking for details about the place. So let me just ask it to invent the details for now because again this is hypothetical for me. Okay. So here is the plan that it is proposing. It is suggesting using HTML, CSS and [music] JS which is completely fine.14:00
+
+Then it is providing the design direction for example which color palette it is going to use which fonts it is going to use. Now here if you spot that it is using enter by any chance which it shouldn't but if it is then make sure you replace it then it's proposing the page structure. So from here you can give it any feedback that you want.14:22
+
+So let me first tell it that this should be a onepage website and not multi-page and based on your feedback it is going to update the plan. Now most people are going to start building here but not [music] us. At this stage we are going to give it inspiration. At this point claude cannot read your mind. It does not know the type of website that you imagine.14:44
+
+[music] So it is good to give it some inspiration. You can share screenshots you like. You can give it the name of the wipe. For example, you're looking for dark luxury or something else. That is going to tell it exactly what we want. Now, there are websites like Dribble and Awards that you can use to find website inspirations.15:05
+
+So, let's say I type Airbnb landing page. Then, here are some inspirations that I'm getting. Now, obviously, we are not going to copy it as is, but it's again a great way to tell Claude what you're looking for. For example, I like this one. So, what I can do is I can copy this and I can share the image right here.15:25
+
+Similarly, you can go to awards and you can search for let's say hotel this time and you can get some amazing inspirations from here. Same thing, we just have to paste the image over to Claude. Here's another one I like. So based on this, Claude could see that okay, she likes the ones that have an image on the hero page and then there's text on top of that.15:45
+
+Once you have gathered let's say three to five images, even more you can tell it that this is the vibe I am going for for this website. Please analyze and understand my design taste and use that to update the plan. One more thing you should mention is that we don't want to copy these websites as is. We just want to take inspiration.16:12
+
+As for the images, I will be providing those example for the hero or the property images etc. Whatever it is, we will provide it. The reason why we have to provide it separately is because claude cannot really generate images. So let's [music] send this. I will share the link to dribble and awards in the description in case you want to use it for inspiration.16:33
+
+So see it has already understood what I'm looking for and it's asking that for the main image reference which one do you want to go with. So obviously we want to go with the blurred photo bleed. So we're going to select that. And then it's asking regarding the text. So I'm going to go with this.16:50
+
+And here it has updated the plan. It has also updated the design direction as you can see. So this is the hero page that it has come up with. So blurred hero photo. Then a thin glass navigation bar. Then these are the sections etc. All right. And now I think at this point we're good with number three which is the inspiration.17:08
+
+It has understood what we are looking for and hence we're going to ask it to start writing the code. So we're going to select the first option that says yes and auto accept. If possible, put claude on the auto mode so that it doesn't keep on asking for permissions uh for even the smallest changes and it keeps on working while you can take a walk or drink coffee.17:33
+
+Okay, so I waited for about 5 minutes and we have the first look of the website ready. Now obviously we haven't shared the images etc yet but let's see what it has come up with. So essentially we are just going to copy the path of the index.html file. In case you are finding difficulties you can just ask it to give you the link to view the website.17:54
+
+Then we're going to open that file over here. Okay. So this is the hero page. The image is missing obviously. All right. So that's the website it has come up with. Obviously it looks very incomplete right now because the images are not present. And now the next rule is to build it in pieces. We are going to go section by section.18:20
+
+We will start with the hero and later on we will progress to the later stages. So we are not going to worry about the rest of the website. For now let's work on the hero of the website. And our hero deserves a video or an image. So text only heroes look plain. But if you have some sort of media, some sort of image or video on the background, it really helps even if it's a plain image doesn't have to contain anything.18:45
+
+It really helps elevate the hero of the website. So let's generate an image for this hero. So I'm simply going to take a screenshot of this hero page. I'm going to take it to charg. And let me tell it that this is the hero of my website. I'm looking for a background image that works well with the site.19:05
+
+Now I do not have the prompt of the image. So I'm going to ask Claude to help me with that. So I'm simply going to ask it to help me write the prompt for the image of the hero page. In case you have an existing image that you want to use, what you can also do is you can use chat GPD to edit it for you.19:25
+
+So you can paste your existing image and then the prompt on top of it. If you're generating it from scratch, then it's quite easy. So it has shared the prompt with us. So, I'm going to copy this prompt over here. And I'm also going to copy the ratio. All right. All good. Let's change it to high. And let's [music] send it.19:43
+
+And here is the image that we got. So, the hero page is not revealing the property directly. It's more of a cliff sort of a vibe. And then if you scroll down, you can see the property which I think would be in the second section. So now I'm going to download this. And here in the files, let me create a new folder. Let me call it images or let's call it images by admin so that it's a unique folder.20:07
+
+Then we're going to copy this image or if you want to drag and drop it that's fine and paste it. So here comes the image. Let's rename it. So let's call it hero image. Copy the path of the image and let me tell it here's the image. Please update the hero. So then it's going to use this image and put it on the website. Okay.20:28
+
+So it's updated. Let's check it. So let me refresh and [music] yes the image is there and there's a slight zoom in into the image which looks nice. [music] Now what I don't like is this boundary at all which is this empty space and that brings me to step number six which is introducing motion.20:48
+
+So we are going to make our website move. Basically small things like fade up, hover lift, reveal. Right now it looks quite static. So if basically you come onto the website and you scroll down right there's not much going on here for introducing motion you can either describe it yourself or again you can take inspiration.21:09
+
+So there are websites like 21st dev which have amazing motion graphic inspirations you can take and not only that if you like something you can copy the prompt for it and you can share it with claude and it will implement that for you. So after scrolling through different components, I like this one which basically is an image expansion text blend.21:31
+
+So let me show you how it works. So this is how the hero page would look like. But then once someone scrolls, it opens up and it scrolls like this. So what we can do is we can keep this image as the background and on the main image we can have the property. So they can see the background that okay, it's on the cliffs and as they scroll they see the real property and that is where they scroll.21:51
+
+So let me copy the prompt for this one. Then I'm going to head over to Claude and I'm going to paste it. So it's a big prompt. And before this I would like to tell it that I want to use this component onto the hero page. I would like to use the cliff image as the background and the property image [music] as the one that reveals or let's say that reveals itself.22:17
+
+And here's the image of the property that we want to showcase. So I'm going to copy this, paste it here. Let's name it hero image showcase. Then copy the path of the image and let me paste [music] it here. So here's the image of the property that we would like to reveal. And then we can continue with the prompt that we copied.22:34
+
+So let's see how that turns out to be. All right. So it has completed that. So let's try it. So I've refreshed it. All right. Beautiful. So it's quite smooth. Nice. Now the next thing that I would like to do is get rid of this boundary and make this full screen so that it looks even better. So I'm going to send this over.22:56
+
+Okay, so that has been updated. So let me refresh. So now if I scroll, this is how it looks [music] like. So I think there's a mismatch in the energy. So here it's giving dark vibes and this is completely bright. So let's talk to Claude about that. So I've asked it how we can fix that. So it has fixed some [music] of it.23:15
+
+So it has changed the contrast levels etc. So let's see. All right. Yeah. So now it matches I think. So it's not very different. So it it's kind of matching and then shows the property. Okay. So that right there completes the hero of our website. And now we can move on to the next sections. [music] But before that something that is very important is that we add the images.23:36
+
+So let me ask claw to give me the prompt for all the images. I'm going to generate them. I will drop them here and then we can proceed with the rest of it. So it has written eight prompts for all the images. Now the thing is that if you generate them one by one, it's going to take you a lot of time.23:52
+
+So one hack that you can uh use is that you can download the codeex extension inside of VS code. Codeex is the AI coding assistant by OpenAI or CH GPT. So you simply install it and then you can open it side by side on the same project. Then simply sign in with your chat GPD account and then you can simply copy the prompt file and you can ask it to generate the images for you.24:18
+
+And the prompt file already mentions that it has to reference those two images we generated previously to generate the new ones so that it matches. So we don't have to worry about that. So I'm simply going to ask it to please use the prompts in the prompts MD file and generate [music] the images for me, rename them and save them in the images by admin folder.24:44
+
+So that way I don't have to do much work. And this is more useful if you're trying to generate many images in batch. So let's send this. Okay. So Codeex first saw the images we had generated and based on that it has generated the other images that are needed for the website. All of them matching perfectly.25:04
+
+It has also added them to this folder and renamed them just as Claude wants it. So that saved me a lot of time. And now let me tell Claude that all the images have been generated and added to the folder. assess the folder and update the website with the images, make any corrections like contrast etc if needed and let's send it and that's why I prefer using VS code because on the same project I can use claude I can use codeex and I can use other agents all right so it has updated the website with the images that we had generated25:44
+
+using codeex so let's go here let's do a refresh refresh and let's scroll down. All right. So, we have the images now. I think we can also click on them and view them. All right. Okay. So, that's the terrace. Okay. Beautiful. So, no doubt the images look great. We don't have to change anything here.26:05
+
+The only thing is that things after the hero feel a little static. Like there's not much motion or animation or transition happening here. So, we need to work on that. And even the footer looks a bit you know um plain and it's it should be highlighting this part. So let's see what we can do. So I started a new chart on cloud code.26:28
+
+I have selected the plan mode because we need to do a little bit of planning before we move forward. And I have told it that the website looks very static after the hero page. So I'm asking you to suggest motions and transitions that we can add to the remaining sections of the website. Go section by section.26:46
+
+It should match the overall website vibe, layout, and hierarchy. Let me also add that it must feel immersive and premium. Do not generate [music] any code, only propose. Let's send it. A lot of people think that the plan mode can only be used at the very beginning when you're planning a project.27:10
+
+But I personally think that at any given point in time when you are transitioning from one phase to another, you should use the plan mode. It helps Claude think before it does anything. It is like you having a meeting with Claude or a meeting with your developer on the next steps. So it found the problem and it has written this file that basically tells that we can do these additions to make things better.27:37
+
+It has suggested it per section starting from the navigation bar all the way to the footer. So it's saying that more animation is not the fix. Instead extending the hero's own grammar downward is the fix which I think makes complete sense. So it has also summarized it here. So I think we can proceed with this plan. In case we don't like it, we can always rewind back to the version that we currently have.28:02
+
+So let me ask it to proceed with the implementation phase by phase. All right. If you're looking for a next level animations etc. then you can also install this skill animation design skills which is going to basically teach claude about 3D design frame of motion etc. It would be more important if you're building a website that is around tech or something like that.28:28
+
+Not really if you're building one for an Airbnb. So this is in the same GitHub page that I have talked about previously. Simply you just have to ask Claude to take this command and then install the individual skills. That's all. So let's wait for Claude to complete this [music] and hopefully it makes this static website look more alive.28:48
+
+You know, designing an insanely beautiful website using Claude is more about patience than anything else because Claude can do it. It's just that you have to follow a series of steps to get it to a point where the website looks actually presentable because you just compare it with the first version we got and you'll see the real difference.29:09
+
+So the question isn't if Claude can build a good website or not. The question is do you have the patience to sit and build a beautiful website. Okay. So it has updated the website with the motions it proposed. So let's go and check what it has done. So let me refresh. Okay. So that's the hero page. Then that's the next one. Okay.29:28
+
+Oh, we even have this. Okay. Beautiful. All right. All right. So that was a nice attempt. Now based on my experience, I know one thing for sure. If you add a lot of motions and transitions and animations and scrolling effects, the website feels playful and visually exhausting. On the other hand, if you don't add them, it looks completely static.29:52
+
+it feels flat and doesn't give that experience. So what do we do in that case? The sweet spot is alternating between the two. So one part of your website can have a nice motion. The next one can feel a little static. Not completely static but maybe have less animations or micro interactions. And then the next one can again give them a nice experience.30:15
+
+Maybe a scrolling effect or some other. And then again there should be another one that lets them breathe. So the rhythm between the two is what I think is going to create a nice experience for the website. Now here we have already done a nice animation sort of a thing. For this one let's leave it as is. Let's not play a lot with it.30:34
+
+Let's not try to get the image here text there you know let's not play with it. But then for this section let's again do something nice. So I hope you get my vision. So on 21st dev, I found this one that I personally liked and I think we can implement it here which is again going to match the vibe of the hero and it's going to show the images in that effect.30:56
+
+Then we can again leave this as is and maybe do something here or something on the footer. So that would create a complete rhythm or a website experience in my opinion. So again I'm going to copy the prompt for this one. I'm going to start a new chart on claw code because I want to clear up the context and I'm going to tell it that in the rooms section I want to apply this sticky scroll effect on the images of the property.31:23
+
+Let me know if you need any more images to implement it. And now let me paste the prompt and let me send it. So it implemented the sticky scroll effect but it needed more images. So it wrote the prompts for those images. I simply went to codeex. I told it that please review the prompt file and generate the new images that haven't been generated.31:47
+
+It did generate all of them as you can see. I told Claude that all the images have been generated and I also asked it to remove the hover effect on the image that it had previously. So all of that work is now done. So now let's check the new effect. So refreshed. Let's scroll. Okay, that was nice. Yeah. And I think we can also click on them. Yep.32:15
+
+And we can move like this. Similar to Airbnb. Beautiful. All right. So that right there creates the rhythm. So that's the hero. Then we're leaving some space for breathing and for reading. Then again we are showcasing the property using the scroll effect. If they want [music] they can stop and look at each each image, read the description, right? And then we come here. Beautiful.32:42
+
+Then there is this 140 steps thing. [music] And finally the footer. So I think the last change that I would like to make is really I would like to add the image in the background here that we have right here. But the difference would be that we would still have this green overlay on top of it. so that it's there but it's not completely visible.33:04
+
+And I think this one is still fine. Or let's also add a typing effect for this line right here. And I think that should complete our website. So let me tell Claude good job. So I've told it add a typing effect on the 140 steps line. And then also add this image to the footer section. Apply a subtle green overlay so the image is faintly visible.33:24
+
+And that should hopefully complete the design part of the website. All right. Right. So, it has implemented the change. Let's see. Okay. So, here's the typing effect. Beautiful. And here's the image. Beautiful. And I feel that right there completes our website. Let's also check these buttons quickly while we're at it. All right.33:45
+
+So, yeah, everything works. And this takes you to Airbnb's website. This is the main page. Perfect. Just as [music] it should be and actually better than I imagined before I started. So we completed rule number four which was go section by section begin with [music] the hero. We completed number five which was a hero deserves a video or image and we also added more to the rest of the website.34:09
+
+We also made our website feel alive. And that brings me to the next one that says make it responsive. The website can be seen on a desktop. It can be seen on a tablet. It can be seen on a phone. You never know. Most of the times it's going to be a phone. So you better optimize for it.34:27
+
+It might look all good on your laptop, but maybe it breaks on a phone. So, how do you test that? So, you simply right click and select inspect. After that, you will spot this icon right here that you have to click. Just remove this. Okay. And from here, you can check the responsiveness. So, for example, let me choose let's say iPhone 14. Okay.34:48
+
+So, this is how it would look on iPhone 14. So now if you see clearly Claude made sure that it worked on an iPhone. Just look at this title. Okay. I'm going to scroll. Yeah. So that's different from what we have um on the desktop but it works. Okay. Now maybe you want to add some section definers etc on the phone version of it.35:12
+
+The scrolling effect does not work on the phone right. So yes things need to be fixed. Let's try iPad. on iPad I think it's going to work quite similar but there's no scrolling effect even though this doesn't look bad but still right so now at this point it's a matter of iterating so you simply come to claude if you want you can give it a screenshot of this page or whatever is wrong and you ask it to refine it across phone and tablets so accordingly it is going to update that same code so that it works across different devices once you're at a stage where you like35:49
+
+everything. So you can try different devices and once you're like okay it looks good that is when we move to the next step which is an audit. Yes, we are going to basically make claude code audit whatever it has done. We are going to make it judge itself or score itself based on these parameters.36:10
+
+For example, how well is the copy or how performative or responsive is the website? We're also going to make it check the security aspects. Are we exposing anything wrong? Is there any vulnerability? We will also ask it to check responsiveness across different devices and overall give itself a score and also suggest anything that needs to be improved.36:33
+
+It wouldn't be biased. It's going to look at its own shortcomings so that before we take our website live on the internet, we are completely prepared. So, I'm going to share this prompt with you in the description. You can grab it from there. And once you're all set, just send this prompt to Claude Code. All right.36:52
+
+So, it has completed the audit. It gave us a score of 67 on 100. Now, you might think that that's too bad, but let me tell you that it's being extremely strict when it's coming up with that score. So, anything above 50 is actually not bad and anything above 80 is amazing. Then it is given scores.37:11
+
+For example, visual hierarchy 8, security 8, performance and responsiveness 7, trust three, motion 8, design 9, and then the reasons as well. It has also very nicely written down the issues. For example, this is not working on the phone. Whatever it is, it's mainly around responsiveness in my case because I haven't really worked on that.37:37
+
+then a complete breakdown and the recommended changes before launch. And now your job is to actually ask it to fix these. Yes, things like adding a favicon, which is that small icon at the very top of the tab. And once you've done that, ask it to run the audit again. If you're anywhere near 80 or even above that, you're good to go.38:00
+
+And that is when you can proceed with the final step, which is deployment. So right now this website is nothing else but a file on your computer. Your friend cannot access it because it's not on the internet. So now it's time to take it to the internet. What do you need to take it to the internet? You need two things.38:20
+
+The first is a domain. For example, in this case it could be um www.thecliffs.com or maybe www.the-cliffs.com the-cliffs.com or dot whatever the place is, right? So that is the domain. Then there comes the hosting. The hosting is what stores all of your code files. For instance, this one.38:46
+
+It being on your computer doesn't help. It has to be on the server. So once you have the code files in place using the hosting and once you have connected it to a real domain, that is when anyone on the internet can access it. They can simply type that domain and your website would pop up similar to how you are seeing it on screen.39:03
+
+[music] Now you might think from where do I buy a hosting from where do I buy a domain and how do I get my website live? Don't worry I've got you covered. Now I would suggest you use Hostinger as your hosting provider. Let me tell you why. Firstly, if you buy a hosting from Hostinger, you will get a free domain for an entire year.39:22
+
+So you don't have to buy it separately. You just buy the hosting and you get the free domain for a complete year along with the email and ASL. Second, Hostinger has amazing affordable plans. Cost of performance is unmatched. I'm using it for my own website. No complaints till date. And third, their monsoon sale is currently live.39:44
+
+Their monsoon sale started on the 30th of June and it continues till the 17th of August. And that means you can get discounts of up to 83% on your hosting plans. Just compare it with the other ones in the market and you will see the difference. For this price, you're not only getting the hosting but also the domain. So I will include the link to this page in the description below.40:05
+
+Click on that link and scroll down. That is where you will spot the plans. I would suggest going with the premium plan. You can host up to three websites using this hosting plan. You will get one domain free for an entire year. There's 20 GB of storage and two mailboxes per website free for one year.40:24
+
+And this should be more than enough for the website that we have built. Another reason why we're choosing Hostinger is because Hostinger connects directly with claw code. Meaning we can simply command clot code that deploy my website connect the domain and it will deploy it for us. We don't have to do any manual deployment.40:41
+
+So once you're all set, simply click on choose plan. Then you simply have to choose for how long you would like to buy the hosting for. The free domain deal works for plans of 12 months and above and you will get a better price if you choose a longer duration. Now a small gift from my side. You can use the coupon code yashika 20 to get a flat 20% discount on your card value.41:02
+
+And this discount coupon applies to 12 months, 24 months and 48 months plan. So you will find the link to Hostinger along with the coupon codes in the description. Don't forget to use the link along with the coupon codes for some extra discount. Now, let me show you how you can connect Hostinger to cloud code and how you can deploy the website using just a simple command.41:22
+
+So, once you're on the homepage, just like this popup, you will see a pop-up that says claim your domain. And right there, you have to simply choose the domain you want for your website. For example, in this case, it could be www.thecliffs.com. So it's a simple search you have to do and you simply have to choose it. I already claimed it for my other demo.41:42
+
+And now let's connect it to claw code. So head over to API and now head over to claude code. After that select both of these MCP tools. You will find this configuration that you have to copy. Then simply come back to claude code. Ask it to add this config to the let me first paste the config to this file right here. So to this file.42:06
+
+So you basically add this configuration to this file and you send it. While it's doing that, scroll down and generate a new token. Let me call it cloud code and it never expires. Copy the token. If you're able to find the file here, simply replace the API token in the file. If you're not able to find it, you can simply ask claw to update it.42:26
+
+So update the token and you can share the token with it. Okay. So that is done. Now start a new chat and then look for MCP servers and there you should find hostinger connected. So that connects both of them. Now we just have to command it to deploy it. So I am telling it that deploy my website securely to the hosting plan that I bought on Hostinger and connect it to the terracotta trail.com domain I have.42:52
+
+So you can replace it with whichever domain you claimed and you can send it. After that it will take all your code files and it will host it. Okay. So the deployment is complete and the website is finally live on this domain or whichever one you chose. So let's head over to this domain and let's see if everything works fine.43:09
+
+And indeed the website deployment was a success. We have it live on the domain. We started from a draft that looked awful and this is what we created out of it and that too without being a designer ourselves. Use the same principles and you will be able to create any website in the world that looks [music] amazing.43:30
+
+And that is how we built an insanely beautiful website using clot code from scratch. If this video was valuable and if you feel that you will now build a website that looks good or if you have learned how to build it and you've already built it, don't forget to like this video and do let me know in the comments.43:49
+
+If you want to learn no code AI, agentic AI, and web coding, don't forget to subscribe. Turn on the bell notification so that you don't miss whenever I post a video. If you're interested in working with me, check out the description of this video. You'll find the link to my agency's website. You'll also find my calendar if you're interested in oneonone consulting.44:07
+
+And if you want to connect with me personally, you can send me a connection request on LinkedIn. And don't forget to follow me on X. I put some exclusive content there that I think you would like. So, don't forget to follow me. So yes, that is pretty much it for this video. I will meet you in the next one.
+

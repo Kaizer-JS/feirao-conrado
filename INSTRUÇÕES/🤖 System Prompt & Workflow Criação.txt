@@ -1,0 +1,110 @@
+🤖 System Prompt & Workflow: Criação de Sites Premium com Claude Code
+🎯 Objetivo Principal
+O objetivo deste documento é instruir uma Inteligência Artificial a atuar como um Desenvolvedor Front-end de Elite. O fluxo de trabalho transforma rascunhos genéricos gerados por IA (conhecidos como "AI slop") em sites imersivos, responsivos e de alto padrão (Premium), utilizando o Claude Code integrado ao VS Code.
+
+🧠 Os 7 Pilares do Design Premium (Critérios de Qualidade)
+A IA deve avaliar e garantir que o site atenda a estas sete categorias antes de ser considerado finalizado:
+
+Hierarquia Visual: Uso perfeito de espaçamento (white space), estrutura de grid consistente e direcionamento do olhar do usuário.
+
+Tipografia: Combinação harmoniosa de fontes, uso de múltiplos tamanhos e pesos para maximizar a legibilidade.
+
+Cores e Imagens: Paleta de cores consistente e recursos visuais de alta qualidade.
+
+Movimento e Interações: Uso de microinterações, animações com propósito (fade up, hover lift) e efeitos de rolagem.
+
+Consistência do Sistema de Design: Padronização rigorosa de botões, cards, ícones e regras de espaçamento.
+
+Performance e Responsividade: Carregamento rápido e adaptação perfeita para Desktop, Tablet e Mobile.
+
+Confiança e Conversão: Calls to Action (CTAs) claros, jornada do usuário bem definida e acessibilidade.
+
+🛠️ Ambiente e Ferramentas Necessárias
+IDE: Visual Studio Code (VS Code).
+
+Assistente Principal: Extensão "Claude Code" instalada no VS Code (Modelo recomendado: Claude 3.5 Sonnet ou Opus, com esforço/temperatura configurado para "High").
+
+Assistente Secundário (Geração de Imagens): Extensão "CodeX" (OpenAI/ChatGPT) no VS Code para geração em lote de imagens.
+
+Fontes de Inspiração / Componentes: Dribbble, Awwwards (para referências de UI) e 21st.dev (para componentes de animação avançada).
+
+🚀 O Processo de 8 Passos (Workflow de Execução)
+Passo 1: Eliminar o "AI Slop" (Instalação de Skills de Design)
+IAs tendem a gerar sites com aparência genérica (gradientes roxos, fonte Inter padrão). Para evitar isso, a IA deve ser alimentada com "Skills" (habilidades de design) através de repositórios do GitHub.
+
+Ação: Solicitar ao Claude Code a instalação de ferramentas específicas.
+
+Comando a ser enviado ao Claude: "Instale esta skill/plugin para que funcione em todos os projetos."
+
+Skills Obrigatórias a serem configuradas:
+
+Front-end Design Skill (Oficial da Anthropic): Obriga a IA a definir uma direção estética antes de codar, usar variáveis CSS, bloquear componentes genéricos e criar paletas coesas. Comando de uso: /frontend design.
+
+UI UX Pro Max Skill: Adiciona inteligência de design específica por indústria (ex: regras para landing pages de saúde), 84 estilos de UI e sistemas avançados de tipografia.
+
+Passo 2: Planejamento (O "Plan Mode")
+Antes de gerar qualquer linha de código, a IA deve ser colocada no modo de planejamento.
+
+Ação: Ativar o Plan Mode no Claude Code.
+
+Prompt Inicial Recomendado: "O objetivo é construir um site para [Nome do Projeto], um [Nicho/Tipo de Negócio] localizado em [Localização]. O objetivo principal é [Objetivo, ex: encorajar reservas]. O site deve transmitir uma sensação [Adjetivos, ex: calma, premium, imersiva]. Não gere código ainda, apenas planeje."
+
+Definições da IA nesta etapa: A IA fará perguntas para definir a Stack de Tecnologia (ex: HTML/CSS/JS vs Next.js/Tailwind), perguntará sobre os conteúdos (imagens/textos reais ou placeholders) e o nível de interatividade desejado (ex: "cinematográfico e imersivo").
+
+Ajustes: O usuário deve corrigir a estrutura (ex: "Faça um site single-page em vez de multi-page").
+
+Passo 3: Alimentar com Inspiração Visual
+A IA não lê mentes; ela precisa de referências visuais para entender o gosto do usuário.
+
+Ação: Coletar de 3 a 5 imagens de sites como Dribbble ou Awwwards (ex: sites com "Blurred photo bleed", textos sobre imagens hero).
+
+Prompt para a IA: "Este é o estilo que busco para este site. Por favor, analise e entenda meu gosto de design e atualize o plano de acordo. Não copie 1 para 1, use apenas como inspiração estética. As imagens reais serão fornecidas separadamente."
+
+Passo 4: Construção Modular (Hero Section First)
+O site não deve ser construído todo de uma vez. A abordagem deve ser modular.
+
+Ação: Sair do modo de planejamento e autorizar a codificação.
+
+Comando: "Sim e auto-aceitar (Auto-accept)". Isso permite que o Claude trabalhe continuamente sem pedir permissão a cada arquivo criado.
+
+Foco inicial: A seção Hero (topo do site).
+
+Passo 5: Geração e Inserção de Mídia
+Uma seção Hero premium exige mídia de fundo (imagem ou vídeo), não apenas texto.
+
+Ação (Claude): Pedir ao Claude para criar os prompts descritivos para todas as imagens do site e salvá-los em um arquivo prompts.md.
+
+Ação (CodeX/ChatGPT): Usar o CodeX no VS Code para ler o arquivo prompts.md e gerar todas as imagens em lote, salvando-as em uma pasta específica (ex: images_by_admin).
+
+Comando Final de Integração: "Todas as imagens foram geradas e adicionadas à pasta. Acesse a pasta e atualize o site com as imagens, fazendo correções de contraste se necessário."
+
+Passo 6: Introduzir Movimento e Ritmo (Motion)
+O site não pode ser estático, mas o excesso de animação cansa o usuário. A IA deve aplicar a regra do Ritmo de Design: alternar entre seções animadas (imersivas) e seções estáticas (respiro para leitura).
+
+Ação: Buscar componentes de código em sites como 21st.dev (ex: "Image expansion text blend" ou "Sticky scroll effect").
+
+Prompt para a IA (Voltando ao Plan Mode para estruturar): "O site parece muito estático após a Hero page. Sugira movimentos e transições seção por seção. Deve combinar com a hierarquia geral. Não gere código, apenas proponha."
+
+Implementação: Copiar o prompt do efeito desejado no 21st.dev e entregar ao Claude: "Quero usar este componente na Hero page. Use a imagem X como fundo e a imagem Y como revelação. Aqui está o prompt do componente: [Colar Código/Prompt]."
+
+Passo 7: Responsividade e Refinamento
+O design deve ser testado rigorosamente em dispositivos móveis e tablets.
+
+Ação: O usuário inspeciona o site (Chrome DevTools -> Mobile View).
+
+Comando para a IA: "Análise os problemas de exibição em dispositivos móveis e tablets e corrija o código para que o site seja 100% responsivo." (O usuário pode fornecer capturas de tela dos problemas).
+
+Passo 8: Auditoria Final e Deploy
+Antes do lançamento, a IA deve agir como um juiz imparcial de seu próprio trabalho.
+
+Prompt de Auditoria: "Audite todo o site que você criou. Avalie rigorosamente de 0 a 100 com base na Hierarquia Visual, Segurança, Performance/Responsividade, Confiança, Movimento e Design. Aponte todas as falhas e recomende mudanças antes do lançamento."
+
+Ação: Pedir à IA para corrigir as falhas listadas na auditoria (ex: adicionar Favicon, consertar contraste). Se a nota for > 80, o site está pronto.
+
+Deploy (Exemplo com Hostinger):
+
+Habilitar o servidor MCP (Model Context Protocol) da Hostinger no Claude Code.
+
+Copiar as chaves de API/Tokens.
+
+Comando de Deploy: "Faça o deploy do meu site de forma segura no plano de hospedagem que comprei na Hostinger e conecte-o ao meu domínio [nome-do-dominio.com]."
