@@ -20,12 +20,12 @@
   /* Cartões, caixas e campos */
   --linha: rgba(255, 255, 255, 0.1);
   /* Hairlines limpas em vidro */
-  --ouro: #FFC837;
-  /* Dourado vibrante e moderno */
-  --ouro-claro: #FFE596;
-  /* Brilho do ouro reluzente */
-  --ouro-fundo: #D49514;
-  /* Tom rico de ouro puro */
+  --ouro: #DDA82A;
+  /* Dourado rico, nobre e encorpado */
+  --ouro-claro: #F3D27B;
+  /* Brilho reluzente e aquecido */
+  --ouro-fundo: #B88414;
+  /* Tom profundo de ouro puro */
   --creme: #FFFFFF;
   /* Texto principal branco limpo */
   --creme-suave: #A1A1AA;
@@ -33,7 +33,7 @@
   --branco: #FFFFFF;
   --erro: #FF5252;
 
-  --metal: linear-gradient(135deg, #FFC837 0%, #FFE596 50%, #D49514 100%);
+  --metal: linear-gradient(135deg, #DDA82A 0%, #F3D27B 45%, #B88414 100%);
 
   /* ═════════════════════════════════════════════════════════════════════════
      [ CONTROL Z MASTER DO BRILHO DOURADO DE FUNDO ]
@@ -748,8 +748,8 @@ section[id] {
 /* ── 06. VANTAGENS E PARCEIROS ───────────────────────────────────────────── */
 .vantagens {
   padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
-  background: var(--tinta-2);
-  border-block: 1px solid var(--linha);
+  background: linear-gradient(180deg, #060607 0%, #0C0C0E 50%, #060607 100%);
+  border-block: 0;
 }
 
 .vantagens__grade {
@@ -852,8 +852,8 @@ section[id] {
 .empreendimentos {
   position: relative;
   padding-block: var(--secao-y);
-  background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--ouro) calc(8% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 50%), var(--tinta-2);
-  border-block: 1px solid var(--linha);
+  background: linear-gradient(180deg, #060607 0%, #0C0C0E 50%, #060607 100%), radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--ouro) calc(5% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 50%);
+  border-block: 0;
 }
 
 .empreendimentos::before,
@@ -1083,8 +1083,8 @@ section[id] {
 .cadastro {
   position: relative;
   padding-block: var(--secao-y);
-  background: var(--tinta-2);
-  border-block: 1px solid var(--linha);
+  background: linear-gradient(180deg, #060607 0%, #0C0C0E 50%, #08080A 100%);
+  border-block: 0;
   overflow: hidden;
 }
 
@@ -1330,8 +1330,8 @@ section[id] {
 
 .rodape {
   padding-top: clamp(3rem, 2rem + 3vw, 4.5rem);
-  background: var(--tinta-2);
-  border-top: 1px solid var(--linha);
+  background: linear-gradient(180deg, #08080A 0%, #0C0C0E 100%);
+  border-top: 0;
 }
 
 .rodape__grade {
@@ -1902,8 +1902,8 @@ section[id] {
    ========================================================================== */
 .secao-destaque-master {
   padding-block: var(--secao-y);
-  background: var(--tinta-2);
-  border-block: 1px solid var(--linha);
+  background: linear-gradient(180deg, #060607 0%, #0C0C0E 50%, #060607 100%);
+  border-block: 0;
   position: relative;
 }
 
@@ -2079,8 +2079,8 @@ section[id] {
 .secao-conquista-dark {
   position: relative;
   padding-block: var(--secao-y);
-  background: radial-gradient(circle at 80% 50%, color-mix(in srgb, var(--ouro) calc(12% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 60%), var(--tinta-2);
-  border-block: 1px solid var(--linha);
+  background: linear-gradient(180deg, #060607 0%, #0C0C0E 50%, #060607 100%), radial-gradient(circle at 80% 50%, color-mix(in srgb, var(--ouro) calc(6% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 60%);
+  border-block: 0;
 }
 
 .sobre-grid-2col {
@@ -2500,8 +2500,8 @@ section[id] {
    ========================================================================== */
 .secao-video-promo {
   padding-block: var(--secao-y);
-  background: var(--tinta);
-  border-bottom: 1px solid var(--linha);
+  background: linear-gradient(180deg, #060607 0%, #09090C 50%, #060607 100%);
+  border-bottom: 0;
 }
 
 .video-promo-card {
@@ -2657,26 +2657,22 @@ section[id] {
   color: #0B0E14;
 }
 
-/* Rodando: o ícone some e só reaparece quando o mouse passa por cima. */
+/* Rodando: o ícone fica totalmente oculto e só reaparece ao passar o mouse ou focar. */
 .video-promo-player-box[data-estado="tocando"] .video-toggle-overlay {
   opacity: 0;
+  pointer-events: none;
 }
 
 .video-promo-player-box[data-estado="tocando"]:hover .video-toggle-overlay,
 .video-promo-player-box .video-toggle-overlay:focus-visible {
   opacity: 1;
+  pointer-events: auto;
 }
 
-/* Pausado: o ícone de play fica fixo na tela do vídeo. */
+/* Pausado: o ícone de play fica visível na tela do vídeo. */
 .video-promo-player-box[data-estado="pausado"] .video-toggle-overlay {
   opacity: 1;
-}
-
-/* No toque não existe hover — o ícone fica sempre visível. */
-@media (hover: none) {
-  .video-promo-player-box[data-estado="tocando"] .video-toggle-overlay {
-    opacity: 0.85;
-  }
+  pointer-events: auto;
 }
 
 
@@ -2722,8 +2718,8 @@ section[id] {
    ========================================================================== */
 .secao-mosaico-archistudio {
   padding-block: var(--secao-y);
-  background: #060607;
-  border-bottom: 1px solid var(--linha);
+  background: linear-gradient(180deg, #060607 0%, #09090C 50%, #060607 100%);
+  border-bottom: 0;
 }
 
 /* 1. Mosaico de 4 Janelas Verticais da Fachada Panorâmica Contínua */
@@ -3129,8 +3125,8 @@ section[id] {
    ========================================================================== */
 .detalhes-imoveis {
   padding-block: var(--secao-y);
-  background: var(--tinta);
-  border-bottom: 1px solid var(--linha);
+  background: linear-gradient(180deg, #060607 0%, #08080B 50%, #060607 100%);
+  border-bottom: 0;
 }
 
 .detalhe-bloco {
@@ -3429,7 +3425,7 @@ section[id] {
    ═══════════════════════════════════════════════════════════════════ */
 .arc {
   padding: 5rem 0;
-  background: #060607
+  background: linear-gradient(180deg, #060607 0%, #09090C 50%, #060607 100%);
 }
 
 /* ① MOSAICO 4 COLUNAS ESCALONADAS */
