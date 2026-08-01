@@ -8,8 +8,8 @@
    ============================================================================= */
 
 const CONFIG = {
-  whatsapp: "5571999999999",                   // número que recebe os cadastros: 55 + DDD + número
-  telefone: "(71) 99999-9999",                 // exibido no rodapé
+  whatsapp: "5571999491927",                   // número que recebe os cadastros: 55 + DDD + número
+  telefone: "(71) 99949-1927",                 // exibido no rodapé
   email: "contato@conradoimobiliaria.com.br",
   instagram: "conradoimobiliaria",
   local: "",                                   // ex.: "Parque Shopping Bahia" — vazio usa a frase padrão

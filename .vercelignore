@@ -1,0 +1,24 @@
+# Acervo do projeto — material de origem, não faz parte do site publicado.
+EMPREENDIMENTOS/
+EMPRESAS PARCEIRAS/
+MATERIAL DE APOIO/
+INSTRUÇÕES/
+IMAGENS PAR AUSAR DEAGRACA/
+LOGO/
+VIEOS/
+cidade sete sois/
+correções/
+_ARQUIVO-ANTIGO/
+
+# Versão anterior da landing page (duplicada, ~120 MB só de PDF).
+LP-FEIRAO-CONRADO/
+
+# Scripts de build das imagens — rodam na máquina, não no servidor.
+tools/
+
+# Sobras de trabalho na raiz.
+crop_*.jpg
+m390-*.jpeg
+t1024-*.jpeg
+passos-inicial.png
+README.md

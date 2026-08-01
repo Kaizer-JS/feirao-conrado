@@ -11,18 +11,18 @@ Tudo está em **um lugar só**: o bloco `CONFIG`, nas primeiras linhas de [js/ma
 
 ```js
 const CONFIG = {
-  whatsapp: "5571999999999",                        // ← número que recebe os cadastros (55 + DDD)
-  telefone: "(71) 99999-9999",                      // ← telefone exibido no rodapé
+  whatsapp: "5571999491927",                        // ← número que recebe os cadastros (55 + DDD)
+  telefone: "(71) 99949-1927",                      // ← telefone exibido no rodapé
   email: "contato@conradoimobiliaria.com.br",       // ← confirmar
-  instagram: "conradoimobiliaria",                  // ← confirmar
+  instagram: "conradoimobiliaria",                  // ← confirmado
   local: "",                                        // ← nome/endereço do stand (vazio = frase padrão)
   envio: "whatsapp",
   endpoint: "",
 };
 ```
 
-Os três primeiros são **placeholders** — o telefone `(71) 99999-9999` veio do protótipo e
-precisa ser substituído pelo número real antes de o site ir ao ar.
+Telefone/WhatsApp `(71) 99949-1927` e o Instagram `@conradoimobiliaria` são os dados reais
+da imobiliária. O e-mail ainda é o do protótipo — confirme antes de publicar.
 
 ### Para onde vão os cadastros
 

@@ -10,10 +10,10 @@
 
 const CONFIG = {
   // WhatsApp que recebe os cadastros — só números, com 55 + DDD.
-  whatsapp: "5571999999999",
+  whatsapp: "5571999491927",
 
   // Contatos exibidos no rodapé.
-  telefone: "(71) 99999-9999",
+  telefone: "(71) 99949-1927",
   email: "contato@conradoimobiliaria.com.br",
   instagram: "conradoimobiliaria",
 
@@ -182,6 +182,19 @@ function iniciarCabecalho() {
 
   menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", fecharMenu));
   window.addEventListener("keydown", (e) => e.key === "Escape" && fecharMenu());
+
+  /* Ao girar o tablet de retrato para paisagem (ou alargar a janela), o menu
+     sanfonado some do CSS mas continuaria marcado como aberto — e o botão que
+     fecha ele já não aparece mais. Fecha junto para o estado não ficar preso. */
+  const larguraMenu = window.matchMedia("(min-width: 861px)");
+  const aoPassarDoLimite = (e) => {
+    if (e.matches) fecharMenu();
+  };
+  if (larguraMenu.addEventListener) {
+    larguraMenu.addEventListener("change", aoPassarDoLimite);
+  } else {
+    larguraMenu.addListener(aoPassarDoLimite); // Safari antigo
+  }
 }
 
 /* ════════════════════════════════════════════════════════ revelação ao rolar */

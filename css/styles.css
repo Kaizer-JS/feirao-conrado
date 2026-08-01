@@ -317,6 +317,19 @@ section[id] {
   border-bottom: 1px solid var(--linha);
 }
 
+/* Valores longos ("79 para carro e 24 para moto") precisam poder quebrar;
+   sem isto o item de flex trava na largura mínima do conteúdo e empurra
+   o diálogo da galeria para fora da tela no celular. */
+.ficha--vertical>div>dt {
+  min-width: 0;
+}
+
+.ficha--vertical>div>dd {
+  min-width: 0;
+  text-align: right;
+  overflow-wrap: break-word;
+}
+
 .ficha--vertical>div:first-child {
   border-top: 1px solid var(--linha);
 }
@@ -590,24 +603,29 @@ section[id] {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: clamp(600px, 92svh, 940px);
-  padding-block: clamp(7rem, 5rem + 8vw, 10rem) clamp(4rem, 2rem + 6vw, 7rem);
+  min-height: clamp(550px, 86svh, 820px);
+  padding-block: clamp(6.5rem, 5rem + 6vw, 9rem) clamp(3.5rem, 2rem + 4vw, 6rem);
   overflow: hidden;
   isolation: isolate;
 }
 
 .hero__foto {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 22%;
   z-index: -2;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 100%);
 }
 
 .hero__foto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 82% center;
-  animation: respiro 24s ease-in-out infinite alternate;
+  object-position: 20% 15%;
+  filter: brightness(0.97) contrast(1.03);
 }
 
 .hero::before {
@@ -616,25 +634,30 @@ section[id] {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(100deg, var(--tinta) 10%, color-mix(in srgb, var(--tinta) 92%, transparent) 46%, color-mix(in srgb, var(--tinta) 30%, transparent) 72%, transparent 88%),
-    linear-gradient(to top, var(--tinta) 3%, transparent 48%),
-    radial-gradient(120% 90% at 12% 50%, rgb(0 0 0 / 0.55), transparent 62%);
+    linear-gradient(90deg,
+      var(--tinta) 0%,
+      var(--tinta) 32%,
+      color-mix(in srgb, var(--tinta) 80%, transparent) 45%,
+      transparent 65%),
+    linear-gradient(to top, var(--tinta) 0%, transparent 35%),
+    radial-gradient(75% 75% at 15% 50%, rgb(0 0 0 / 0.85), transparent 55%);
 }
 
 .hero__interno {
   display: grid;
-  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
-  gap: clamp(1.5rem, 0.5rem + 3vw, 3.5rem);
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: clamp(1.25rem, 0.5rem + 2vw, 2.5rem);
   align-items: center;
 }
 
 .hero__selo img {
   width: 100%;
-  filter: drop-shadow(0 30px 55px rgb(0 0 0 / 0.55));
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgb(0 0 0 / 0.55));
 }
 
 .hero__texto {
-  max-width: 46ch;
+  max-width: 34ch;
 }
 
 .hero h1 em {
@@ -680,6 +703,18 @@ section[id] {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--ouro));
   animation: puxa 2.6s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .hero__foto {
+    left: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero__foto img {
+    object-position: 40% 15%;
+  }
 }
 
 /* ── 06. VANTAGENS E PARCEIROS ───────────────────────────────────────────── */
@@ -816,7 +851,9 @@ section[id] {
 
 .grade-imoveis {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* min(300px, 100%) impede que o cartão fique mais largo que a coluna em
+     telas de 320px ou menos (iPhone SE antigo, Galaxy Fold fechado). */
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: clamp(1.25rem, 0.6rem + 2vw, 2rem);
 }
 
@@ -1392,7 +1429,9 @@ section[id] {
 
 .galeria__conteudo {
   display: grid;
-  grid-template-columns: 1.25fr 0.9fr;
+  /* minmax(0, …) em vez de 1fr: sem isso a coluna não encolhe abaixo do
+     conteúdo mais largo da ficha e o diálogo estoura para fora da tela. */
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr);
   max-height: min(90svh, 780px);
 }
 
@@ -1400,6 +1439,9 @@ section[id] {
   position: relative;
   background: #000;
   min-height: 260px;
+  /* item de grade: sem min-width:0 a largura natural da foto vira o piso da
+     coluna e o palco (com as setas) vaza para fora do diálogo no celular. */
+  min-width: 0;
 }
 
 .galeria__palco img {
@@ -1467,6 +1509,7 @@ section[id] {
 .galeria__lado {
   padding: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
   overflow-y: auto;
+  min-width: 0;
 }
 
 .galeria__construtora {
@@ -1717,11 +1760,15 @@ section[id] {
   }
 
   .galeria__conteudo {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .galeria__palco {
     aspect-ratio: 16 / 10;
+    /* Com aspect-ratio, o min-height de 260px passaria a ditar a LARGURA
+       (260 × 1.6 = 416px) e o palco vazaria para fora do diálogo. Aqui a
+       largura manda e a altura sai da proporção. */
+    min-height: 0;
   }
 }
 
@@ -1737,7 +1784,7 @@ section[id] {
   }
 
   .hero {
-    min-height: auto;
+    min-height: clamp(580px, 90svh, 750px);
   }
 
   .hero__interno {
@@ -1746,18 +1793,18 @@ section[id] {
   }
 
   .hero__selo {
-    width: clamp(150px, 34vw, 220px);
+    width: clamp(130px, 30vw, 190px);
   }
 
   .hero__foto img {
-    object-position: 68% 35%;
+    object-position: 38% 10%;
   }
 
   .hero::before {
     background: linear-gradient(180deg,
-        color-mix(in srgb, var(--tinta) 92%, transparent) 6%,
-        color-mix(in srgb, var(--tinta) 58%, transparent) 45%,
-        var(--tinta) 94%);
+        color-mix(in srgb, var(--tinta) 94%, transparent) 0%,
+        color-mix(in srgb, var(--tinta) 60%, transparent) 45%,
+        var(--tinta) 95%);
   }
 }
 
@@ -3369,6 +3416,14 @@ section[id] {
   border: 1px solid rgba(255, 255, 255, .08)
 }
 
+.hero__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+
+
 .arc__col img {
   width: 100%;
   height: 100%;
@@ -3402,7 +3457,7 @@ section[id] {
 
 .arc__col-words span {
   font-family: var(--fonte-titulo);
-  font-size: clamp(.6rem, .45rem+.4vw, .8rem);
+  font-size: clamp(.6rem, .45rem + .4vw, .8rem);
   font-weight: 800;
   color: #fff;
   letter-spacing: .06em;
@@ -3413,7 +3468,7 @@ section[id] {
 /* ② TÍTULO */
 .arc__title {
   font-family: var(--fonte-titulo);
-  font-size: clamp(2.8rem, 2rem+3.5vw, 5.5rem);
+  font-size: clamp(2.8rem, 2rem + 3.5vw, 5.5rem);
   font-weight: 900;
   color: #fff;
   letter-spacing: -.03em;
@@ -3458,7 +3513,7 @@ section[id] {
 
 .arc__about-lead {
   font-family: var(--fonte-titulo);
-  font-size: clamp(1.1rem, .95rem+.5vw, 1.4rem);
+  font-size: clamp(1.1rem, .95rem + .5vw, 1.4rem);
   font-weight: 700;
   color: #fff;
   line-height: 1.35
@@ -3504,7 +3559,7 @@ section[id] {
 
 .arc__card-key h3 {
   font-family: var(--fonte-titulo);
-  font-size: clamp(1rem, .85rem+.4vw, 1.3rem);
+  font-size: clamp(1rem, .85rem + .4vw, 1.3rem);
   font-weight: 900;
   color: #fff;
   line-height: 1.2;
@@ -3570,7 +3625,7 @@ section[id] {
 
 .arc__port-content h3 {
   font-family: var(--fonte-titulo);
-  font-size: clamp(1rem, .85rem+.4vw, 1.3rem);
+  font-size: clamp(1rem, .85rem + .4vw, 1.3rem);
   font-weight: 900;
   color: #fff;
   line-height: 1.2;
@@ -3688,7 +3743,7 @@ section[id] {
 
 .arc__proj-name h4 {
   font-family: var(--fonte-titulo);
-  font-size: clamp(.95rem, .8rem+.4vw, 1.2rem);
+  font-size: clamp(.95rem, .8rem + .4vw, 1.2rem);
   font-weight: 900;
   color: #fff;
   letter-spacing: .04em;
@@ -3808,5 +3863,117 @@ section[id] {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   13. AJUSTES DE CELULAR E TABLET
+   Correções de comportamento em telas pequenas e de toque. Fica por
+   último de propósito: precisa vencer as regras das seções acima.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── O menu sanfonado só existe abaixo de 861px ─────────────────────────
+   Sem isto, girar o tablet de retrato (menu aberto) para paisagem deixa o
+   painel preso na tela — e o botão que fecharia ele já virou display:none. */
+@media (min-width: 861px) {
+  .menu-mobile {
+    display: none !important;
+  }
+}
+
+/* ── Formulário: impedir o zoom automático do iOS ───────────────────────
+   O Safari do iPhone dá zoom na página quando o campo focado tem fonte
+   menor que 16px. Como o cadastro é o objetivo da página, os campos sobem
+   para 16px no toque — o resto do texto continua na escala original. */
+@media (max-width: 860px) {
+
+  .formulario input[type="text"],
+  .formulario input[type="tel"],
+  .formulario select {
+    font-size: 16px;
+  }
+}
+
+/* ── Alvos de toque ────────────────────────────────────────────────────
+   Links de texto que ficavam com 21–22px de altura. No toque valem pelo
+   menos ~44px de área clicável. */
+@media (max-width: 860px) {
+
+  .link-book,
+  .botao-link-ouro {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .rodape__nav a,
+  .rodape__contato a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .rodape__nav {
+    gap: 0;
+  }
+
+  .rodape__contato {
+    gap: 0.35rem;
+  }
+
+  .menu-mobile a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ── Galeria em tela estreita ──────────────────────────────────────────
+   A ficha vira uma coluna: rótulo em cima, valor embaixo. Lado a lado,
+   valores como "79 para carro e 24 para moto" ficam ilegíveis. */
+@media (max-width: 620px) {
+  .galeria {
+    width: min(100% - 1.5rem, 1140px);
+  }
+
+  .ficha--vertical>div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+  }
+
+  .ficha--vertical>div>dd {
+    text-align: left;
+  }
+
+  .galeria__seta {
+    width: 40px;
+    height: 40px;
+  }
+
+  .galeria__seta--antes {
+    left: 0.6rem;
+  }
+
+  .galeria__seta--depois {
+    right: 0.6rem;
+  }
+}
+
+/* ── Sem hover no toque ────────────────────────────────────────────────
+   Em telas de toque o :hover "gruda" depois do tap: o cartão fica preso
+   no estado levantado. Melhor não ter transform nenhum. */
+@media (hover: none) {
+
+  .imovel:hover,
+  .item-beneficio-dark:hover,
+  .passo-card-item:hover,
+  .arc__proj-card:hover,
+  .archistudio-card-imovel:hover,
+  .card-flutuante-branco:hover,
+  .sobre-card-pill:hover,
+  .botao:hover,
+  .cadastro__selo:hover {
+    transform: none;
   }
 }

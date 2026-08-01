@@ -5,3 +5,9 @@ node_modules/
 .antigravityignore
 .claude/
 .playwright-mcp/
+.vercel/
+
+# Sobras de trabalho na raiz (recortes e screenshots de teste)
+crop_*.jpg
+m390-*.jpeg
+t1024-*.jpeg
