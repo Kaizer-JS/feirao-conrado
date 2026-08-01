@@ -35,6 +35,14 @@
 
   --metal: linear-gradient(135deg, #FFC837 0%, #FFE596 50%, #D49514 100%);
 
+  /* ═════════════════════════════════════════════════════════════════════════
+     [ CONTROL Z MASTER DO BRILHO DOURADO DE FUNDO ]
+     Altere a variável abaixo para controlar todo o iluminado dourado das seções:
+       --ouro-opacidade-fundo: 1;  -> (MODO ATIVADO) Toques dourados no fundo
+       --ouro-opacidade-fundo: 0;  -> (MODO CONTROL Z) Desativa 100% dos fundos dourados
+     ═════════════════════════════════════════════════════════════════════════ */
+  --ouro-opacidade-fundo: 1;
+
   /* tipografia */
   --fonte-titulo: "Archivo", "Segoe UI", sans-serif;
   --fonte-texto: "Karla", "Segoe UI", sans-serif;
@@ -634,7 +642,8 @@ section[id] {
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(circle at 18% 35%, color-mix(in srgb, var(--ouro) 8%, transparent) 0%, transparent 55%),
+    radial-gradient(circle at 18% 35%, color-mix(in srgb, var(--ouro) calc(14% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 60%),
+    radial-gradient(circle at 82% 20%, color-mix(in srgb, var(--ouro) calc(10% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 50%),
     linear-gradient(90deg,
       var(--tinta) 0%,
       var(--tinta) 40%,
@@ -825,7 +834,7 @@ section[id] {
 .empreendimentos {
   position: relative;
   padding-block: var(--secao-y);
-  background: var(--tinta-2);
+  background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--ouro) calc(8% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 50%), var(--tinta-2);
   border-block: 1px solid var(--linha);
 }
 
@@ -1098,10 +1107,10 @@ section[id] {
 .cadastro__caixa {
   position: relative;
   padding: clamp(1.5rem, 1rem + 2vw, 2.75rem);
-  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-3) 92%, var(--ouro) 8%) 0%, var(--tinta-3) 100%);
-  border: 1px solid color-mix(in srgb, var(--ouro) 35%, var(--linha));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-3) 88%, var(--ouro) calc(12% * var(--ouro-opacidade-fundo))) 0%, var(--tinta-3) 100%);
+  border: 1px solid color-mix(in srgb, var(--ouro) calc(45% * var(--ouro-opacidade-fundo)), var(--linha));
   border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-cartao), inset 0 1px 0 color-mix(in srgb, var(--ouro) 45%, transparent), 0 0 35px color-mix(in srgb, var(--ouro) 10%, transparent);
+  box-shadow: var(--sombra-cartao), inset 0 1px 0 color-mix(in srgb, var(--ouro) calc(55% * var(--ouro-opacidade-fundo)), transparent), 0 0 45px color-mix(in srgb, var(--ouro) calc(15% * var(--ouro-opacidade-fundo)), transparent);
 }
 
 .formulario {
@@ -2052,7 +2061,7 @@ section[id] {
 .secao-conquista-dark {
   position: relative;
   padding-block: var(--secao-y);
-  background: radial-gradient(circle at 80% 50%, color-mix(in srgb, var(--ouro) 6%, transparent) 0%, transparent 60%), var(--tinta-2);
+  background: radial-gradient(circle at 80% 50%, color-mix(in srgb, var(--ouro) calc(12% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 60%), var(--tinta-2);
   border-block: 1px solid var(--linha);
 }
 
@@ -2390,12 +2399,12 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-3) 93%, var(--ouro) 7%) 0%, var(--tinta-3) 100%);
-  border: 1px solid color-mix(in srgb, var(--ouro) 30%, var(--linha));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-3) 90%, var(--ouro) calc(10% * var(--ouro-opacidade-fundo))) 0%, var(--tinta-3) 100%);
+  border: 1px solid color-mix(in srgb, var(--ouro) calc(40% * var(--ouro-opacidade-fundo)), var(--linha));
   border-radius: var(--raio-grande);
   padding: 2.25rem 2rem;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 color-mix(in srgb, var(--ouro) 35%, transparent);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 color-mix(in srgb, var(--ouro) calc(45% * var(--ouro-opacidade-fundo)), transparent), 0 0 35px color-mix(in srgb, var(--ouro) calc(10% * var(--ouro-opacidade-fundo)), transparent);
 }
 
 .stat-dark-item h3 {
@@ -2478,11 +2487,11 @@ section[id] {
 }
 
 .video-promo-card {
-  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-2) 90%, var(--ouro) 10%) 0%, var(--tinta-2) 100%);
-  border: 1px solid color-mix(in srgb, var(--ouro) 30%, var(--linha));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-2) 85%, var(--ouro) calc(15% * var(--ouro-opacidade-fundo))) 0%, var(--tinta-2) 100%);
+  border: 1px solid color-mix(in srgb, var(--ouro) calc(38% * var(--ouro-opacidade-fundo)), var(--linha));
   border-radius: var(--raio-grande);
   padding: clamp(2rem, 1.5rem + 2vw, 3.5rem);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 color-mix(in srgb, var(--ouro) 40%, transparent);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 color-mix(in srgb, var(--ouro) calc(50% * var(--ouro-opacidade-fundo)), transparent), 0 0 45px color-mix(in srgb, var(--ouro) calc(12% * var(--ouro-opacidade-fundo)), transparent);
   margin-bottom: 2.5rem;
 }
 
