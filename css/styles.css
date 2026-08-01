@@ -634,6 +634,7 @@ section[id] {
   inset: 0;
   z-index: -1;
   background:
+    radial-gradient(circle at 18% 35%, color-mix(in srgb, var(--ouro) 8%, transparent) 0%, transparent 55%),
     linear-gradient(90deg,
       var(--tinta) 0%,
       var(--tinta) 40%,
@@ -1097,10 +1098,10 @@ section[id] {
 .cadastro__caixa {
   position: relative;
   padding: clamp(1.5rem, 1rem + 2vw, 2.75rem);
-  background: var(--tinta-3);
-  border: 1px solid var(--linha);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-3) 92%, var(--ouro) 8%) 0%, var(--tinta-3) 100%);
+  border: 1px solid color-mix(in srgb, var(--ouro) 35%, var(--linha));
   border-radius: var(--raio-grande);
-  box-shadow: var(--sombra-cartao);
+  box-shadow: var(--sombra-cartao), inset 0 1px 0 color-mix(in srgb, var(--ouro) 45%, transparent), 0 0 35px color-mix(in srgb, var(--ouro) 10%, transparent);
 }
 
 .formulario {
@@ -2049,8 +2050,9 @@ section[id] {
 
 /* ── SEÇÃO MINHA CASA MINHA CONQUISTA (ESTILO ESCURO NOBRE) ────────────────────────── */
 .secao-conquista-dark {
+  position: relative;
   padding-block: var(--secao-y);
-  background: var(--tinta-2);
+  background: radial-gradient(circle at 80% 50%, color-mix(in srgb, var(--ouro) 6%, transparent) 0%, transparent 60%), var(--tinta-2);
   border-block: 1px solid var(--linha);
 }
 
@@ -2388,11 +2390,12 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  background: var(--tinta-3);
-  border: 1px solid var(--linha);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-3) 93%, var(--ouro) 7%) 0%, var(--tinta-3) 100%);
+  border: 1px solid color-mix(in srgb, var(--ouro) 30%, var(--linha));
   border-radius: var(--raio-grande);
   padding: 2.25rem 2rem;
   text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 color-mix(in srgb, var(--ouro) 35%, transparent);
 }
 
 .stat-dark-item h3 {
@@ -2475,11 +2478,11 @@ section[id] {
 }
 
 .video-promo-card {
-  background: var(--tinta-2);
-  border: 1px solid var(--linha);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tinta-2) 90%, var(--ouro) 10%) 0%, var(--tinta-2) 100%);
+  border: 1px solid color-mix(in srgb, var(--ouro) 30%, var(--linha));
   border-radius: var(--raio-grande);
   padding: clamp(2rem, 1.5rem + 2vw, 3.5rem);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 color-mix(in srgb, var(--ouro) 40%, transparent);
   margin-bottom: 2.5rem;
 }
 
@@ -2839,7 +2842,8 @@ section[id] {
 }
 
 .card-destaque-chave:hover {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: color-mix(in srgb, var(--ouro) 50%, transparent);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px color-mix(in srgb, var(--ouro) 15%, transparent);
 }
 
 .card-chave-conteudo h3 {
