@@ -614,17 +614,17 @@ section[id] {
   top: 0;
   bottom: 0;
   right: 0;
-  left: 22%;
+  left: 35%;
   z-index: -2;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000 20%, #000 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
 }
 
 .hero__foto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 20% 15%;
+  object-position: 10% 15%;
   filter: brightness(0.97) contrast(1.03);
 }
 
@@ -636,11 +636,11 @@ section[id] {
   background:
     linear-gradient(90deg,
       var(--tinta) 0%,
-      var(--tinta) 32%,
-      color-mix(in srgb, var(--tinta) 80%, transparent) 45%,
-      transparent 65%),
+      var(--tinta) 40%,
+      color-mix(in srgb, var(--tinta) 80%, transparent) 55%,
+      transparent 70%),
     linear-gradient(to top, var(--tinta) 0%, transparent 35%),
-    radial-gradient(75% 75% at 15% 50%, rgb(0 0 0 / 0.85), transparent 55%);
+    radial-gradient(65% 65% at 15% 50%, rgb(0 0 0 / 0.85), transparent 50%);
 }
 
 .hero__interno {
