@@ -624,8 +624,10 @@ section[id] {
   right: 0;
   left: 35%;
   z-index: -2;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
-  mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%), linear-gradient(to top, transparent 0%, #000 200px);
+  mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%), linear-gradient(to top, transparent 0%, #000 200px);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 .hero__foto img {
@@ -651,6 +653,22 @@ section[id] {
       transparent 70%),
     linear-gradient(to top, var(--tinta) 0%, transparent 35%),
     radial-gradient(65% 65% at 15% 50%, rgb(0 0 0 / 0.85), transparent 50%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 280px;
+  z-index: -1;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--tinta) 30%, transparent) 25%,
+    color-mix(in srgb, var(--tinta) 70%, transparent) 55%,
+    color-mix(in srgb, var(--tinta) 95%, transparent) 82%,
+    var(--tinta) 100%
+  );
+  pointer-events: none;
 }
 
 .hero__interno {
@@ -4003,5 +4021,113 @@ section[id] {
   .botao:hover,
   .cadastro__selo:hover {
     transform: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BOTÃO FLUTUANTE WHATSAPP — DESIGN PREMIUM (ANIMADO + TOOLTIP DESTAQUE)
+   ═══════════════════════════════════════════════════════════════════ */
+.zap {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  isolation: isolate;
+}
+
+.zap__pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.4) 0%, rgba(255, 200, 55, 0.25) 70%, transparent 100%);
+  animation: zapPulse 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.zap__rotulo {
+  padding: 0.65rem 1.15rem;
+  background: rgba(12, 12, 14, 0.92);
+  border: 1px solid var(--ouro);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-menor);
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 200, 55, 0.2);
+  transform: translateX(8px);
+  opacity: 0.95;
+  transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 300ms ease, border-color 300ms ease;
+}
+
+.zap:hover .zap__rotulo {
+  transform: translateX(0);
+  opacity: 1;
+  border-color: #FFE596;
+}
+
+.zap__bolha {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  border: 2px solid var(--ouro);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5), 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: transform 300ms cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 300ms ease;
+}
+
+.zap:hover .zap__bolha {
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 0 16px 42px rgba(37, 211, 102, 0.7), 0 0 25px rgba(255, 200, 55, 0.4);
+}
+
+.zap__bolha svg {
+  width: 32px;
+  height: 32px;
+  fill: #FFFFFF;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes zapPulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .zap {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+  .zap__rotulo {
+    display: none;
+  }
+  .zap__bolha {
+    width: 54px;
+    height: 54px;
+  }
+  .zap__bolha svg {
+    width: 28px;
+    height: 28px;
   }
 }
