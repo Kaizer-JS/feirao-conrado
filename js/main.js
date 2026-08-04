@@ -457,12 +457,22 @@ function iniciarContadores() {
   }
 
   grupos.forEach((grupo) => {
+    /* Trava de uma contagem só. Sem ela, quando a página abre já com a barra
+       na tela, o observer conta na hora E o fallback de 600ms conta de novo:
+       o número sobe, volta para zero no meio do caminho e sobe outra vez. */
+    let jaContou = false;
+
+    const contarUmaVez = () => {
+      if (jaContou) return;
+      jaContou = true;
+      observador.unobserve(grupo);
+      animarGrupo(grupo);
+    };
+
     const observador = new IntersectionObserver(
       (entradas) => {
         entradas.forEach((entrada) => {
-          if (!entrada.isIntersecting) return;
-          observador.unobserve(entrada.target); // conta uma vez e para por aqui
-          animarGrupo(grupo);
+          if (entrada.isIntersecting) contarUmaVez();
         });
       },
       // threshold 0: dispara assim que a barra encosta na tela, independente
@@ -477,10 +487,7 @@ function iniciarContadores() {
        registrar a entrada — aí os números ficariam travados em zero. */
     setTimeout(() => {
       const r = grupo.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0) {
-        observador.unobserve(grupo);
-        animarGrupo(grupo);
-      }
+      if (r.top < window.innerHeight && r.bottom > 0) contarUmaVez();
     }, 600);
   });
 }
