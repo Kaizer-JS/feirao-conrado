@@ -291,19 +291,90 @@ function iniciarAcordeaoPassos() {
   window.addEventListener("resize", atualizarTrilho);
 }
 
-/* ═══════════════════════════════════════════════════════ carrossel de logos */
-function iniciarMarquise() {
-  const marquise = document.querySelector("[data-marquise]");
-  if (!marquise) return;
+/* ═══════════════════════════════════════════════════════ carrossel de logos
+   A esteira roda sozinha (CSS @keyframes correr), mas a pessoa pode segurar
+   e arrastar para o lado a qualquer momento — no dedo ou no mouse. Ao soltar,
+   a rolagem automática retoma exatamente do ponto onde parou, sem pular. */
+function iniciarEsteiras() {
+  document.querySelectorAll("[data-esteira]").forEach((esteira) => {
+    const fita = esteira.querySelector(".esteira__fita");
+    if (!fita) return;
 
-  // velocidade constante (~55px/s) independente da largura do trilho
-  const trilho = marquise.querySelector(".marquise__trilho");
-  const ajustar = () => {
-    const largura = trilho.scrollWidth / 2;
-    trilho.style.animationDuration = `${Math.max(24, largura / 55)}s`;
-  };
-  ajustar();
-  window.addEventListener("resize", ajustar);
+    // velocidade constante (~55px/s) independente da largura do trilho
+    const ajustarDuracao = () => {
+      const largura = fita.scrollWidth / 2;
+      fita.style.setProperty("--duracao", `${Math.max(18, largura / 55)}s`);
+    };
+    ajustarDuracao();
+    window.addEventListener("resize", ajustarDuracao);
+
+    let arrastando = false;
+    let ponteiroId = null;
+    let inicioX = 0;
+    let distanciaInicial = 0; // px já percorridos no ciclo no momento em que o arraste começou
+
+    // distância total de um ciclo: a lista aparece duplicada (a segunda cópia
+    // é só para o loop ficar contínuo), então metade da largura é um ciclo.
+    const larguraCiclo = () => fita.scrollWidth / 2;
+
+    const distanciaAtual = () => {
+      const matriz = new DOMMatrixReadOnly(getComputedStyle(fita).transform);
+      return -matriz.m41; // translateX é negativo; guardamos como distância positiva
+    };
+
+    const iniciar = (evento) => {
+      if (evento.pointerType === "mouse" && evento.button !== 0) return;
+      arrastando = true;
+      ponteiroId = evento.pointerId;
+      esteira.classList.add("esteira--arrastando");
+      inicioX = evento.clientX;
+      distanciaInicial = distanciaAtual();
+      try {
+        // mantém o arraste funcionando mesmo se o dedo sair da área da esteira
+        esteira.setPointerCapture(ponteiroId);
+      } catch {
+        // alguns navegadores recusam capturar um ponteiro fora do padrão —
+        // sem problema, o arraste continua funcionando enquanto o dedo
+        // estiver sobre o elemento.
+      }
+    };
+
+    const mover = (evento) => {
+      if (!arrastando || evento.pointerId !== ponteiroId) return;
+      const ciclo = larguraCiclo();
+      if (!ciclo) return;
+      const delta = evento.clientX - inicioX; // arrastar p/ direita = delta positivo
+      let distancia = distanciaInicial - delta; // arrastar p/ direita recua a esteira
+      distancia = ((distancia % ciclo) + ciclo) % ciclo; // sempre "infinito", nas duas direções
+      fita.style.transform = `translateX(${-distancia}px)`;
+    };
+
+    const soltar = (evento) => {
+      if (!arrastando || evento.pointerId !== ponteiroId) return;
+      arrastando = false;
+      try {
+        esteira.releasePointerCapture(ponteiroId);
+      } catch {
+        // nada a liberar se a captura não tiver sido estabelecida
+      }
+      esteira.classList.remove("esteira--arrastando");
+
+      const ciclo = larguraCiclo();
+      const duracao = parseFloat(getComputedStyle(fita).animationDuration) || 25;
+      if (ciclo) {
+        const progresso = distanciaAtual() / ciclo;
+        // delay negativo = "finge" que a animação já está rodando há esse
+        // tempo, então ela retoma exatamente de onde o dedo soltou.
+        fita.style.animationDelay = `${-progresso * duracao}s`;
+      }
+      fita.style.transform = "";
+    };
+
+    esteira.addEventListener("pointerdown", iniciar);
+    esteira.addEventListener("pointermove", mover);
+    esteira.addEventListener("pointerup", soltar);
+    esteira.addEventListener("pointercancel", soltar);
+  });
 }
 
 /* ═══════════════════════════════════════ contagem animada dos números do feirão
@@ -679,7 +750,7 @@ document.addEventListener("DOMContentLoaded", () => {
   iniciarCabecalho();
   iniciarRevelacao();
   iniciarAcordeaoPassos();
-  iniciarMarquise();
+  iniciarEsteiras();
   iniciarContadores();
   iniciarVideoMudo();
   iniciarGaleria();

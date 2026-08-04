@@ -3145,16 +3145,10 @@ section[id] {
   padding-top: 0;
 }
 
-/* blocos pares invertem o lado do mosaico, mantendo o ritmo da leitura */
-.detalhe-bloco--espelhado .detalhe-info {
-  order: 2;
-}
-
-.detalhe-bloco--espelhado .detalhe-mosaico {
-  order: 1;
-}
-
+/* As fotos vêm sempre antes do texto — no desktop (colunas lado a lado) e
+   no mobile (empilhado) — em todos os blocos, sem alternar de lado. */
 .detalhe-info {
+  order: 2;
   display: flex;
   flex-direction: column;
 }
@@ -3316,6 +3310,7 @@ section[id] {
 
 /* ── mosaico de fotos ───────────────────────────────────────────────────── */
 .detalhe-mosaico {
+  order: 1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(0.6rem, 0.3rem + 0.8vw, 1rem);
@@ -3381,16 +3376,10 @@ section[id] {
     gap: 1.75rem;
   }
 
-  /* Em coluna única, as fotos vêm sempre primeiro — como já acontece
-     visualmente no desktop — e o texto (ficha, lazer, etc.) logo abaixo.
-     Vale para os três blocos, espelhados ou não (por isso o seletor
-     genérico sobrepõe a regra de espelhamento do desktop). */
-  .detalhe-info {
-    order: 2;
-  }
-
+  /* Em coluna única, a ordem (fotos antes do texto) já vem da regra base —
+     só precisa soltar o "position: sticky" do mosaico, que só faz sentido
+     ao lado do texto, em duas colunas. */
   .detalhe-mosaico {
-    order: 1;
     position: static;
     top: auto;
   }
@@ -3846,6 +3835,14 @@ section[id] {
   padding-block: 0.5rem;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  /* deixa o gesto horizontal livre para o JS arrastar a esteira, sem brigar
+     com a rolagem vertical normal da página. */
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.esteira--arrastando {
+  cursor: grabbing;
 }
 
 .esteira__fita {
@@ -3855,8 +3852,20 @@ section[id] {
   animation: correr var(--duracao) linear infinite !important;
 }
 
-.esteira:hover .esteira__fita,
-.esteira:focus-within .esteira__fita {
+/* Pausar ao passar o mouse só faz sentido com mouse de verdade: no toque não
+   existe "tirar o mouse de cima" para destravar, e a esteira ficaria parada
+   para sempre depois do primeiro toque. */
+@media (hover: hover) and (pointer: fine) {
+
+  .esteira:hover .esteira__fita,
+  .esteira:focus-within .esteira__fita {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Enquanto o dedo (ou mouse) está arrastando, o JS assume o transform —
+   a animação para aqui e retoma sozinha no momento em que soltar. */
+.esteira--arrastando .esteira__fita {
   animation-play-state: paused !important;
 }
 
@@ -3889,6 +3898,8 @@ section[id] {
   object-fit: contain;
   filter: none !important;
   opacity: 1 !important;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 @keyframes correr {
