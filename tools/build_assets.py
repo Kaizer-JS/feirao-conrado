@@ -142,7 +142,7 @@ EMPREENDIMENTOS = {
 HERO = ("veneza-prime", 190)  # casal ao pôr do sol — mesma cena do protótipo aprovado
 
 PARTNERS = {
-    "tenda": "Design sem nome (3).png",
+    "tenda": "tenda atualizada .png",
     "mrv": "4.png",
     "direcional": "2.png",
     "lmarquezzo": "4 (2).png",

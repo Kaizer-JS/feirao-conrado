@@ -2570,10 +2570,12 @@ section[id] {
   position: relative;
   border-radius: var(--raio);
   overflow: hidden;
-  border: 1px solid var(--linha);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  border: 1px solid color-mix(in srgb, var(--ouro) calc(30% * var(--ouro-opacidade-fundo)), var(--linha));
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px color-mix(in srgb, var(--ouro) calc(10% * var(--ouro-opacidade-fundo)), transparent);
   aspect-ratio: 16 / 9;
-  background: #05070B;
+  /* Nunca 100% preto: leve brilho dourado no canto antes do vídeo carregar
+     (poster, buffering) ou se o carregamento falhar. */
+  background: radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--ouro) calc(16% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 55%), #05070B;
 }
 
 /* Vídeo real do empreendimento: roda sozinho, sempre mudo.
@@ -3376,15 +3378,19 @@ section[id] {
 @media (max-width: 1040px) {
   .detalhe-bloco {
     grid-template-columns: 1fr;
-    gap: 2.25rem;
+    gap: 1.75rem;
   }
 
-  .detalhe-bloco--espelhado .detalhe-info,
-  .detalhe-bloco--espelhado .detalhe-mosaico {
-    order: 0;
+  /* Em coluna única, as fotos vêm sempre primeiro — como já acontece
+     visualmente no desktop — e o texto (ficha, lazer, etc.) logo abaixo.
+     Vale para os três blocos, espelhados ou não (por isso o seletor
+     genérico sobrepõe a regra de espelhamento do desktop). */
+  .detalhe-info {
+    order: 2;
   }
 
   .detalhe-mosaico {
+    order: 1;
     position: static;
     top: auto;
   }
@@ -3573,8 +3579,8 @@ section[id] {
   grid-template-columns: 1.3fr .7fr;
   align-items: center;
   gap: 1rem;
-  background: #0e0e10;
-  border: 1px solid rgba(255, 255, 255, .1);
+  background: radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--ouro) calc(12% * var(--ouro-opacidade-fundo)), transparent) 0%, transparent 55%), #0e0e10;
+  border: 1px solid color-mix(in srgb, var(--ouro) calc(22% * var(--ouro-opacidade-fundo)), rgba(255, 255, 255, .1));
   border-radius: 20px;
   padding: 2rem;
   overflow: hidden;
@@ -4017,6 +4023,22 @@ section[id] {
   .botao:hover,
   .cadastro__selo:hover {
     transform: none;
+  }
+
+  /* Estes dois trocam de COR no :hover (não só transform) — sem isso, depois
+     do primeiro toque o botão de play do vídeo e o "QUERO APROVEITAR" ficam
+     com o fundo dourado grudado, como se estivessem sempre pressionados. */
+  .video-toggle-overlay:hover {
+    transform: translate(-50%, -50%);
+    background: rgba(11, 14, 20, 0.68);
+    color: var(--ouro);
+  }
+
+  .botao-video-play-pill:hover {
+    background: #FFFFFF;
+    color: #0B0E14;
+    transform: none;
+    box-shadow: none;
   }
 }
 
