@@ -312,6 +312,10 @@ function iniciarEsteiras() {
     let ponteiroId = null;
     let inicioX = 0;
     let distanciaInicial = 0; // px já percorridos no ciclo no momento em que o arraste começou
+    // Enquanto arrasta, a animação é desligada (ver .esteira--arrastando no CSS)
+    // e o transform computado deixa de refletir onde a fita está — por isso a
+    // posição atual é guardada aqui em vez de ser relida do DOM.
+    let distanciaCorrente = 0;
 
     // distância total de um ciclo: a lista aparece duplicada (a segunda cópia
     // é só para o loop ficar contínuo), então metade da largura é um ciclo.
@@ -326,9 +330,15 @@ function iniciarEsteiras() {
       if (evento.pointerType === "mouse" && evento.button !== 0) return;
       arrastando = true;
       ponteiroId = evento.pointerId;
-      esteira.classList.add("esteira--arrastando");
       inicioX = evento.clientX;
+      // lê a posição ANTES de desligar a animação — depois da classe entrar, o
+      // transform computado não reflete mais onde a fita está.
       distanciaInicial = distanciaAtual();
+      distanciaCorrente = distanciaInicial;
+      esteira.classList.add("esteira--arrastando");
+      // reaplica a posição como inline para a fita não saltar para o começo
+      // no instante em que a animação é desligada.
+      fita.style.transform = `translateX(${-distanciaInicial}px)`;
       try {
         // mantém o arraste funcionando mesmo se o dedo sair da área da esteira
         esteira.setPointerCapture(ponteiroId);
@@ -346,6 +356,7 @@ function iniciarEsteiras() {
       const delta = evento.clientX - inicioX; // arrastar p/ direita = delta positivo
       let distancia = distanciaInicial - delta; // arrastar p/ direita recua a esteira
       distancia = ((distancia % ciclo) + ciclo) % ciclo; // sempre "infinito", nas duas direções
+      distanciaCorrente = distancia;
       fita.style.transform = `translateX(${-distancia}px)`;
     };
 
@@ -357,17 +368,24 @@ function iniciarEsteiras() {
       } catch {
         // nada a liberar se a captura não tiver sido estabelecida
       }
+      const ciclo = larguraCiclo();
+
+      // ordem importa: zera o inline e só então religa a animação, senão a
+      // fita pisca de volta na posição antiga por um quadro.
+      fita.style.transform = "";
       esteira.classList.remove("esteira--arrastando");
 
-      const ciclo = larguraCiclo();
-      const duracao = parseFloat(getComputedStyle(fita).animationDuration) || 25;
-      if (ciclo) {
-        const progresso = distanciaAtual() / ciclo;
-        // delay negativo = "finge" que a animação já está rodando há esse
-        // tempo, então ela retoma exatamente de onde o dedo soltou.
-        fita.style.animationDelay = `${-progresso * duracao}s`;
+      // Reposiciona a animação recém-religada no ponto exato onde o dedo
+      // soltou. Tem que ser pela Web Animations API: com animation-delay
+      // negativo não funciona, porque o atalho "animation: ... !important" do
+      // CSS traz um animation-delay: 0s !important que ganha do inline — e
+      // forçar o inline com "important" deixa a animação presa em estado
+      // pendente (startTime nulo), congelando a esteira de vez.
+      const animacao = fita.getAnimations()[0];
+      if (animacao && ciclo) {
+        const duracao = animacao.effect.getTiming().duration;
+        animacao.currentTime = (distanciaCorrente / ciclo) * duracao;
       }
-      fita.style.transform = "";
     };
 
     esteira.addEventListener("pointerdown", iniciar);

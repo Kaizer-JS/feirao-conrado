@@ -3863,10 +3863,15 @@ section[id] {
   }
 }
 
-/* Enquanto o dedo (ou mouse) está arrastando, o JS assume o transform —
-   a animação para aqui e retoma sozinha no momento em que soltar. */
+/* Enquanto o dedo (ou mouse) está arrastando, o JS assume o transform.
+   Precisa ser "animation: none", não "animation-play-state: paused": uma
+   animação CSS ganha do estilo inline no cascade mesmo estando pausada, então
+   com "paused" o translateX que o JS escrevia era simplesmente ignorado e a
+   esteira não saía do lugar ao arrastar. Desligando a animação, o inline volta
+   a valer; ao soltar, o JS religa a animação com delay negativo e ela retoma
+   exatamente de onde o dedo parou. */
 .esteira--arrastando .esteira__fita {
-  animation-play-state: paused !important;
+  animation: none !important;
 }
 
 .esteira__lista {
