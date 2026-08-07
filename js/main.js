@@ -116,6 +116,133 @@ const EMPREENDIMENTOS = {
       ["assets/img/parque-dos-monarcas/04-playground.jpg", "Playground"],
     ],
   },
+
+  "conquista-vila-verde": {
+    nome: "Conquista Vila Verde",
+    construtora: "Direcional",
+    local: "Av. Rio Paramirim, s/n — Abrantes, Camaçari/BA",
+    ficha: {
+      Quartos: "2 (com opção garden)",
+      "Área privativa": "40,67 m² a 47,50 m²",
+      Unidades: "680 (34 torres)",
+      Blocos: "34 torres (térreo + 4)",
+      Vagas: "339 carros e 75 motos",
+      Terreno: "26.982,83 m²",
+    },
+    lazer: [
+      "Piscina adulto com deck molhado e infantil",
+      "Salão de festas com churrasqueira",
+      "Playground e playbaby",
+      "Espaço pet e área verde",
+      "Quadra descoberta",
+      "Espaço fitness, jogos e fresh",
+      "Bicicletário e ponto de embarque",
+    ],
+    book: "assets/books/conquista-vila-verde.pdf",
+    fotos: [
+      ["assets/img/conquista-vila-verde/card.jpg", "Guarita e Fachada"],
+      ["assets/img/conquista-vila-verde/01-piscina.jpg", "Piscinas adulto e infantil"],
+      ["assets/img/conquista-vila-verde/02-salao-festas.jpg", "Salão de festas"],
+      ["assets/img/conquista-vila-verde/03-playground.jpg", "Playground"],
+      ["assets/img/conquista-vila-verde/04-quadra.jpg", "Quadra descoberta"],
+    ],
+  },
+
+  "conquista-lauro-de-freitas": {
+    nome: "Conquista Lauro de Freitas",
+    construtora: "Direcional",
+    local: "Lauro de Freitas/BA (próximo à Estrada do Coco)",
+    ficha: {
+      Quartos: "1 e 2 (com opção garden)",
+      "Área privativa": "36,24 m² (garden até 48,62 m²)",
+      Unidades: "520 (26 blocos)",
+      Blocos: "26 blocos (térreo + 4)",
+      Vagas: "260 carros, 29 motos e 52 bikes",
+      Terreno: "22.793,39 m²",
+    },
+    lazer: [
+      "Piscina adulto e infantil com deck",
+      "Salão gourmet com área externa",
+      "Quadra recreativa coberta",
+      "Churrasqueiras com área coberta",
+      "Fitness descoberto e espaço fresh",
+      "Espaço pet, playground e playbaby",
+      "Bicicletário e estação bike",
+      "Redário, espaço zen e espaço yoga",
+    ],
+    book: "assets/books/conquista-lauro-de-freitas.pdf",
+    fotos: [
+      ["assets/img/conquista-lauro-de-freitas/card.jpg", "Guarita e Portaria"],
+      ["assets/img/conquista-lauro-de-freitas/01-piscina.jpg", "Piscina adulto e infantil"],
+      ["assets/img/conquista-lauro-de-freitas/02-playground.jpg", "Playground"],
+      ["assets/img/conquista-lauro-de-freitas/03-pet.jpg", "Espaço Pet"],
+      ["assets/img/conquista-lauro-de-freitas/04-gourmet.jpg", "Salão Gourmet"],
+    ],
+  },
+
+  "morada-das-estacoes": {
+    nome: "Morada das Estações",
+    construtora: "Tenda",
+    local: "Av. Aliomar Baleeiro, 13.371 — São Cristóvão, Salvador/BA",
+    ficha: {
+      Quartos: "2",
+      "Área privativa": "38,54 m² a 38,73 m²",
+      Unidades: "679 (34 reversíveis PCD)",
+      Blocos: "6 torres (térreo + 9 a 12)",
+      Vagas: "157 vagas no total",
+      Terreno: "29.341,97 m²",
+    },
+    lazer: [
+      "Quadra gramada e funcional externo",
+      "Play kids e play baby",
+      "Espaço delivery e espaço oficina",
+      "Salão de festas com coworking",
+      "Salão de festas gourmet e churrasqueira",
+      "Horta / espaço cultivo e praça dos sabores",
+      "Bicicletários e vaga de carro compartilhado",
+      "Sugestão de espaço para minimercado",
+    ],
+    book: "assets/books/morada-das-estacoes.pdf",
+    fotos: [
+      ["assets/img/morada-das-estacoes/card.jpg", "Portaria"],
+      ["assets/img/morada-das-estacoes/01-churrasqueira.jpg", "Churrasqueira"],
+      ["assets/img/morada-das-estacoes/02-quadra.jpg", "Quadra gramada"],
+      ["assets/img/morada-das-estacoes/03-playground.jpg", "Play kids"],
+      ["assets/img/morada-das-estacoes/04-salao-festas.jpg", "Salão de festas gourmet"],
+    ],
+  },
+
+  "encanto-piata": {
+    nome: "Encanto Piatã",
+    construtora: "Tenda",
+    local: "Rua Colina das Esmeraldas, 163 — Piatã, Salvador/BA",
+    ficha: {
+      Quartos: "2",
+      "Área privativa": "38,54 m² a 38,73 m²",
+      Unidades: "1.611 (81 reversíveis PCD)",
+      Blocos: "8 torres (térreo + 15 pavimentos)",
+      Vagas: "425 (310 carros, 98 motos, 17 PCD)",
+      Terreno: "24.061,27 m²",
+    },
+    lazer: [
+      "Primeiro Tenda com 15 andares em Salvador",
+      "Salão de festas com coworking e gourmet",
+      "Espaço saúde, fitness e fitness externo",
+      "Brinquedoteca, play kids e play baby",
+      "Play pet e sport bar",
+      "Espaço teen e espaço oficina",
+      "Quadras cobertas e espaço delivery",
+      "Wi-Fi nas áreas comuns e minimercado",
+    ],
+    book: "assets/books/encanto-piata.pdf",
+    fotos: [
+      ["assets/img/encanto-piata/card.jpg", "Torres de 15 andares"],
+      ["assets/img/encanto-piata/01-portaria.jpg", "Portaria 24h"],
+      ["assets/img/encanto-piata/02-salao-festas.jpg", "Salão de festas com coworking"],
+      ["assets/img/encanto-piata/03-brinquedoteca.jpg", "Brinquedoteca"],
+      ["assets/img/encanto-piata/04-sportbar.jpg", "Sport Bar"],
+    ],
+  },
 };
 
 /* ══════════════════════════════════════════════════ contatos vindos do CONFIG */
@@ -410,7 +537,7 @@ function iniciarContadores() {
     el.textContent = `${el.dataset.prefixo || ""}${numero}${el.dataset.sufixo || ""}`;
   };
 
-  const DURACAO = 2000; // 2 segundos para a contagem ser bem visível
+  const DURACAO = 1600; // 1.6s de animação fluida
 
   const animarGrupo = (grupo) => {
     const itens = grupo.querySelectorAll("[data-contador]");
@@ -418,11 +545,11 @@ function iniciarContadores() {
       const alvo = Number(el.dataset.valor) || 0;
       const comeco = performance.now();
 
-      el.style.transition = "transform 0.3s ease";
-      el.style.transform = "scale(1.12)";
+      el.style.transition = "transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+      el.style.transform = "scale(1.15)";
       setTimeout(() => {
         el.style.transform = "scale(1)";
-      }, 350);
+      }, 400);
 
       const passo = (agora) => {
         const t = Math.min((agora - comeco) / DURACAO, 1);
@@ -439,56 +566,38 @@ function iniciarContadores() {
     });
   };
 
-  const zerarGrupo = (grupo) => {
-    grupo.querySelectorAll("[data-contador]").forEach((el) => escrever(el, 0));
-  };
-
-  const mostrarValorFinal = (grupo) => {
-    grupo.querySelectorAll("[data-contador]").forEach((el) =>
-      escrever(el, Number(el.dataset.valor) || 0)
-    );
-  };
-
-  // Sem suporte a observer ou com "reduzir movimento": já mostra o número cheio.
   const semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (semMovimento || !("IntersectionObserver" in window)) {
-    grupos.forEach(mostrarValorFinal);
+    grupos.forEach((grupo) => {
+      grupo.querySelectorAll("[data-contador]").forEach((el) =>
+        escrever(el, Number(el.dataset.valor) || 0)
+      );
+    });
     return;
   }
 
   grupos.forEach((grupo) => {
-    /* Trava de uma contagem só. Sem ela, quando a página abre já com a barra
-       na tela, o observer conta na hora E o fallback de 600ms conta de novo:
-       o número sobe, volta para zero no meio do caminho e sobe outra vez. */
-    let jaContou = false;
-
-    const contarUmaVez = () => {
-      if (jaContou) return;
-      jaContou = true;
-      observador.unobserve(grupo);
-      animarGrupo(grupo);
-    };
+    let animado = false;
 
     const observador = new IntersectionObserver(
       (entradas) => {
         entradas.forEach((entrada) => {
-          if (entrada.isIntersecting) contarUmaVez();
+          if (entrada.isIntersecting) {
+            animarGrupo(grupo);
+            animado = true;
+          } else if (animado) {
+            // Reseta quando sai da tela para re-animar se o usuário voltar a rolar
+            grupo.querySelectorAll("[data-contador]").forEach((el) => escrever(el, 0));
+            animado = false;
+          }
         });
       },
-      // threshold 0: dispara assim que a barra encosta na tela, independente
-      // de ela ser mais alta que o visor (acontece no celular, empilhada).
-      { threshold: 0, rootMargin: "0px 0px -12% 0px" }
+      { threshold: 0.2 }
     );
 
-    zerarGrupo(grupo); // a contagem precisa de um ponto de partida
+    // Começa zerado
+    grupo.querySelectorAll("[data-contador]").forEach((el) => escrever(el, 0));
     observador.observe(grupo);
-
-    /* Se a página abrir já rolada na altura da barra, o observer pode não
-       registrar a entrada — aí os números ficariam travados em zero. */
-    setTimeout(() => {
-      const r = grupo.getBoundingClientRect();
-      if (r.top < window.innerHeight && r.bottom > 0) contarUmaVez();
-    }, 600);
   });
 }
 

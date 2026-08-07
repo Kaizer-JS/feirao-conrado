@@ -112,6 +112,10 @@ BOOKS = {
     "veneza-prime": "Book Oficial - Veneza Prime.pdf",
     "vila-santiago": "Book Oficial - Vila Santiago.pdf",
     "parque-dos-monarcas": "PARQUE DOS MONARCAS.pdf",
+    "conquista-vila-verde": os.path.join("..", "novos empreendimentos", "BOOK VILA VERDE.pdf"),
+    "conquista-lauro-de-freitas": os.path.join("..", "novos empreendimentos", "CONQUISTA LAURO DE FREITAS.pdf"),
+    "morada-das-estacoes": os.path.join("..", "novos empreendimentos", "Morada das Estaçoes.pdf"),
+    "encanto-piata": os.path.join("..", "novos empreendimentos", "Encanto Piatã  (1).pdf"),
 }
 
 # (arquivo de saída, xref da imagem embutida no PDF) — todas verificadas sem texto sobreposto
@@ -137,6 +141,34 @@ EMPREENDIMENTOS = {
         ("03-salao-festas", 115),
         ("04-playground", 107),
     ],
+    "conquista-vila-verde": [
+        ("card", 39),           # fachada / guarita
+        ("01-piscina", 45),     # piscina adulto e infantil
+        ("02-salao-festas", 78),
+        ("03-playground", 85),
+        ("04-quadra", 90),
+    ],
+    "conquista-lauro-de-freitas": [
+        ("card", 885),          # guarita / fachada
+        ("01-piscina", 879),    # piscina adulto e infantil
+        ("02-playground", 893),
+        ("03-pet", 914),
+        ("04-gourmet", 948),
+    ],
+    "morada-das-estacoes": [
+        ("card", 74),           # portaria / fachada
+        ("01-churrasqueira", 149),
+        ("02-quadra", 160),
+        ("03-playground", 182),
+        ("04-salao-festas", 207),
+    ],
+    "encanto-piata": [
+        ("card", 590),          # fachada 15 andares
+        ("01-portaria", 114),
+        ("02-salao-festas", 183),
+        ("03-brinquedoteca", 208),
+        ("04-sportbar", 218),
+    ],
 }
 
 HERO = ("veneza-prime", 190)  # casal ao pôr do sol — mesma cena do protótipo aprovado
@@ -158,10 +190,16 @@ MCMV_CROP = (0.033, 0.874, 0.258, 0.972)
 
 
 # --------------------------------------------------------------------------- etapas
+def get_pdf_path(filename):
+    if os.path.isabs(filename):
+        return filename
+    return os.path.abspath(os.path.join(SRC_BOOKS, filename))
+
+
 def build_empreendimentos():
     print("\n[1/5] Imagens dos empreendimentos (extraídas dos books oficiais)")
     for slug, items in EMPREENDIMENTOS.items():
-        pdf = os.path.join(SRC_BOOKS, BOOKS[slug])
+        pdf = get_pdf_path(BOOKS[slug])
         dest = os.path.join(OUT_IMG, slug)
         os.makedirs(dest, exist_ok=True)
         for name, xref in items:
@@ -175,7 +213,7 @@ def build_empreendimentos():
 def build_hero():
     print("\n[2/5] Hero")
     slug, xref = HERO
-    im = pdf_image(os.path.join(SRC_BOOKS, BOOKS[slug]), xref)
+    im = pdf_image(get_pdf_path(BOOKS[slug]), xref)
     save_jpg(im, os.path.join(OUT_IMG, "hero-casal.jpg"), 1588, 894)
     save_jpg(im, os.path.join(OUT_IMG, "hero-casal-mobile.jpg"), 900, 1100)
 
