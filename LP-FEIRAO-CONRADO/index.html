@@ -1,549 +1,1663 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Feirão Conrado — Minha Casa, Minha Conquista</title>
-<meta name="description" content="De 1 a 31 de agosto, as maiores construtoras da Bahia em um só lugar. Condições especiais, entrada parcelada e apoio no financiamento pela Caixa e pelo Minha Casa, Minha Vida.">
-<meta name="theme-color" content="#0B0A09">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feirão Conrado — Minha Casa, Minha Conquista | Conrado Imobiliária</title>
+  <meta name="description"
+    content="De 1 a 31 de agosto, o Feirão Conrado reúne as maiores construtoras da Bahia com condições especiais, entrada parcelada e apoio no financiamento. Cadastre-se e fale com um corretor.">
+  <meta name="theme-color" content="#121110">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
 
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Feirão Conrado — Minha Casa, Minha Conquista">
-<meta property="og:description" content="De 1 a 31 de agosto, as maiores construtoras da Bahia em um só lugar.">
-<meta property="og:image" content="assets/img/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Feirão Conrado — Minha Casa, Minha Conquista">
+  <meta property="og:description"
+    content="Condições especiais das maiores construtoras da Bahia, de 1 a 31 de agosto. Cadastre-se e fale com um corretor.">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="icon" href="assets/favicon.png" sizes="any" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/hero-familia.jpg" media="(min-width:861px)">
-<link rel="stylesheet" href="css/estilo.css">
-<script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Karla:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero-familia.jpg">
+  <!-- O "?v=" no CSS/JS existe só para forçar o navegador a buscar a versão
+       nova depois de um deploy — sem isso, quem já visitou a página fica com
+       a versão antiga em cache até o Cache-Control expirar sozinho (já
+       aconteceu: um celular ficou preso numa logo e num bug antigos por
+       causa disso). Suba esse número sempre que mexer em css/styles.css ou
+       js/main.js. -->
+  <link rel="stylesheet" href="css/styles.css?v=10">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
-<a class="salto" href="#cadastro">Ir direto para o cadastro</a>
+  <a class="pular-para-conteudo" href="#cadastro">Pular para o cadastro</a>
 
-<!-- ════════════════════════════════ TOPO ════════════════════════════════ -->
-<header class="topo" id="topo">
-  <div class="limite topo__linha">
-    <a class="topo__marca" href="#topo" aria-label="Conrado Imobiliária — início">
-      <img src="assets/marca/conrado.png" alt="Conrado Imobiliária" width="481" height="460">
-    </a>
+  <!-- ══════════════════════════════════ CABEÇALHO ══════════════════════════════════ -->
+  <header class="cabecalho" id="topo">
+    <div class="faixa cabecalho__interno">
+      <a class="brand-text-logo" href="#topo" aria-label="Conrado Imobiliária — início">
+        <span class="brand-conrado">CONRADO</span>
+        <span class="brand-imobiliaria">— IMOBILIÁRIA —</span>
+      </a>
 
-    <nav class="topo__nav" aria-label="Seções">
-      <a href="#vantagens">Sobre o feirão</a>
-      <a href="#imoveis">Imóveis</a>
-      <a href="#construtoras">Construtoras</a>
-      <a href="#caminho">Como participar</a>
-    </nav>
+      <nav class="cabecalho__nav" aria-label="Seções da página">
+        <a href="#feirao">Sobre o Feirão</a>
+        <a href="#empreendimentos">Imóveis</a>
+        <a href="#sobre">Vantagens</a>
+        <a href="#passo-a-passo">Como Participar</a>
+        <a href="#cadastro">Fale Conosco</a>
+      </nav>
 
-    <a class="btn btn--linha topo__btn" href="#cadastro">Quero ser contatado</a>
+      <a class="botao botao--contorno cabecalho__cta" href="#cadastro">Fale Conosco</a>
 
-    <button class="topo__menu" type="button" aria-expanded="false" aria-controls="gaveta" aria-label="Abrir menu">
-      <span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<div class="gaveta" id="gaveta" hidden>
-  <a href="#vantagens">Sobre o feirão</a>
-  <a href="#imoveis">Imóveis</a>
-  <a href="#construtoras">Construtoras</a>
-  <a href="#caminho">Como participar</a>
-  <a class="btn btn--ouro" href="#cadastro">Quero ser contatado</a>
-</div>
-
-<main>
-<!-- ════════════════════════════════ HERO ════════════════════════════════ -->
-<section class="hero" id="hero">
-  <div class="limite hero__grade">
-
-    <div class="hero__texto">
-      <img class="hero__selo" src="assets/marca/selo-feirao.png" alt="Feirão Conrado — Minha casa, minha conquista" width="867" height="1100">
-
-      <p class="hero__data">1 a 31 de agosto · Salvador e Lauro de Freitas</p>
-
-      <h1 class="hero__titulo">
-        O momento de conquistar<br>
-        seu imóvel é <span>AGORA</span>
-      </h1>
-
-      <p class="hero__linha">
-        Condições especiais, entrada parcelada e o apoio de quem entende de financiamento
-        do início ao fim.
-      </p>
-
-      <div class="hero__acoes">
-        <a class="btn btn--ouro btn--grande" href="#cadastro">Quero aproveitar</a>
-        <a class="btn btn--linha-clara btn--grande" href="#imoveis">Ver os imóveis</a>
-      </div>
+      <button class="cabecalho__menu" type="button" aria-expanded="false" aria-controls="menu-mobile"
+        aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <div class="hero__foto">
-      <picture>
-        <source media="(max-width:860px)" srcset="assets/img/hero-familia.jpg">
-        <img src="assets/img/hero-familia.jpg" alt="Família baiana sorrindo e caminhando no condomínio" width="760" height="900" fetchpriority="high">
+    <div class="menu-mobile" id="menu-mobile" hidden>
+      <a href="#feirao">Sobre o Feirão</a>
+      <a href="#empreendimentos">Imóveis</a>
+      <a href="#sobre">Vantagens</a>
+      <a href="#passo-a-passo">Como Participar</a>
+      <a href="#cadastro" class="menu-mobile__cta">Fale Conosco</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
+    <section class="hero" id="feirao">
+      <picture class="hero__foto">
+        <source media="(max-width: 720px)" srcset="assets/img/hero-familia.jpg">
+        <img src="assets/img/hero-familia.jpg" alt="Família baiana sorrindo e caminhando no condomínio em Salvador"
+          width="1588" height="894" fetchpriority="high">
       </picture>
-    </div>
 
-  </div>
-
-  <!-- carrossel infinito das construtoras -->
-  <div class="hero__marcas">
-    <div class="limite">
-      <p class="hero__marcas-rotulo">Construtoras e parceiros do feirão</p>
-    </div>
-    <div class="esteira" data-esteira>
-      <div class="esteira__fita">
-        <ul class="esteira__lista">
-          <li><img src="assets/parceiros/tenda-v2.png" alt="Tenda"></li>
-          <li><img src="assets/parceiros/mrv.png" alt="MRV"></li>
-          <li><img src="assets/parceiros/direcional.png" alt="Direcional"></li>
-          <li><img src="assets/parceiros/lmarquezzo.png" alt="L. Marquezzo"></li>
-          <li><img src="assets/parceiros/sertenge.png" alt="Sertenge"></li>
-          <li><img src="assets/parceiros/pejota.png" alt="Pejota Empreendimentos"></li>
-          <li><img src="assets/parceiros/santana.png" alt="Santana Empreendimentos"></li>
-          <li><img src="assets/parceiros/singcred.png" alt="SingCred"></li>
-          <li><img src="assets/parceiros/caixa.png" alt="Caixa Econômica Federal"></li>
-          <li><img src="assets/parceiros/mcmv.png" alt="Minha Casa Minha Vida"></li>
-        </ul>
-        <ul class="esteira__lista" aria-hidden="true">
-          <li><img src="assets/parceiros/tenda-v2.png" alt=""></li>
-          <li><img src="assets/parceiros/mrv.png" alt=""></li>
-          <li><img src="assets/parceiros/direcional.png" alt=""></li>
-          <li><img src="assets/parceiros/lmarquezzo.png" alt=""></li>
-          <li><img src="assets/parceiros/sertenge.png" alt=""></li>
-          <li><img src="assets/parceiros/pejota.png" alt=""></li>
-          <li><img src="assets/parceiros/santana.png" alt=""></li>
-          <li><img src="assets/parceiros/singcred.png" alt=""></li>
-          <li><img src="assets/parceiros/caixa.png" alt=""></li>
-          <li><img src="assets/parceiros/mcmv.png" alt=""></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════ VANTAGENS ════════════════════════════════ -->
-<section class="vantagens" id="vantagens">
-  <div class="limite vantagens__grade">
-    <article data-surge>
-      <span class="vantagens__icone" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><path d="M4 15 16 5l12 10"/><path d="M7 13v13h18V13"/><path d="M16 26v-6h4v6"/></svg>
-      </span>
-      <h3>Condições especiais</h3>
-      <p>Descontos e benefícios que só existem durante o feirão.</p>
-    </article>
-    <article data-surge>
-      <span class="vantagens__icone" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><path d="M8 4h12l6 6v18H8z"/><path d="M20 4v6h6"/><path d="m12 19 3 3 6-6"/></svg>
-      </span>
-      <h3>Aprovação facilitada</h3>
-      <p>Análise de crédito no mesmo dia, com apoio na documentação.</p>
-    </article>
-    <article data-surge>
-      <span class="vantagens__icone" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><circle cx="11" cy="16" r="6"/><path d="M17 16h11"/><path d="M24 16v5"/><path d="M28 16v4"/></svg>
-      </span>
-      <h3>Prontos ou na planta</h3>
-      <p>Opções para quem quer mudar já e para quem prefere planejar.</p>
-    </article>
-    <article data-surge>
-      <span class="vantagens__icone" aria-hidden="true">
-        <svg viewBox="0 0 32 32"><path d="M4 18l5-5 6 4 4-4 4 3 5-6"/><path d="M13 27h6"/><path d="M16 22v5"/></svg>
-      </span>
-      <h3>Atendimento especializado</h3>
-      <p>Corretores da Conrado com você do primeiro contato às chaves.</p>
-    </article>
-  </div>
-</section>
-
-<!-- ════════════════════════════════ IMÓVEIS ════════════════════════════════ -->
-<section class="imoveis" id="imoveis">
-  <div class="limite imoveis__topo">
-    <p class="rotulo">Imóveis participantes</p>
-    <h2 class="titulo">Três <span>empreendimentos</span><br>para conhecer de perto</h2>
-    <p class="imoveis__linha">
-      Fotos e ficha técnica saíram dos books oficiais das construtoras.
-      Clique em qualquer foto para abrir o book completo em PDF.
-    </p>
-  </div>
-
-  <!-- ───────── Veneza Prime ───────── -->
-  <article class="imovel limite" id="veneza-prime">
-    <div class="imovel__ficha">
-      <p class="imovel__conta">01 / 03</p>
-      <p class="imovel__marca">Tenda · Salvador</p>
-      <h3 class="imovel__nome">Veneza Prime</h3>
-      <p class="imovel__lugar">Av. Aliomar Baleeiro, 2.137 — Vila Canária</p>
-
-      <dl class="dados">
-        <div><dt>Quartos</dt><dd>2, com varanda*</dd></div>
-        <div><dt>Área privativa</dt><dd>35,44 m²</dd></div>
-        <div><dt>Unidades</dt><dd>855 em 3 blocos</dd></div>
-        <div><dt>Lazer</dt><dd>Piscina, quadra, fitness, sport bar, brinquedoteca</dd></div>
-      </dl>
-
-      <div class="imovel__acoes">
-        <a class="btn btn--ouro" href="#cadastro">Falar com um corretor</a>
-        <a class="btn btn--linha-clara" href="assets/books/veneza-prime.pdf" target="_blank" rel="noopener">Abrir o book</a>
-      </div>
-      <p class="imovel__nota">*Exceto unidades térreas.</p>
-    </div>
-
-    <div class="imovel__previas">
-      <a class="previa" href="assets/books/veneza-prime.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/veneza-prime/01.jpg" alt="Fachada do Veneza Prime à noite" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Fachada</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/veneza-prime.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/veneza-prime/02.jpg" alt="Varanda de uma unidade do Veneza Prime" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Varanda</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/veneza-prime.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/veneza-prime/03.jpg" alt="Portaria do Veneza Prime" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Portaria</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/veneza-prime.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/veneza-prime/04.jpg" alt="Sala de estar decorada de uma unidade" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Sala de estar</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-    </div>
-  </article>
-
-  <!-- ───────── Vila Santiago ───────── -->
-  <article class="imovel limite" id="vila-santiago">
-    <div class="imovel__ficha">
-      <p class="imovel__conta">02 / 03</p>
-      <p class="imovel__marca">Tenda · Lauro de Freitas</p>
-      <h3 class="imovel__nome">Vila Santiago</h3>
-      <p class="imovel__lugar">Rua Chile, 489 — Recreio Ipitanga</p>
-
-      <dl class="dados">
-        <div><dt>Quartos</dt><dd>2, com ou sem varanda</dd></div>
-        <div><dt>Área privativa</dt><dd>35,45 m²</dd></div>
-        <div><dt>Unidades</dt><dd>356 em 3 blocos</dd></div>
-        <div><dt>Lazer</dt><dd>Piscina, streetball, churrasqueira, carro compartilhado</dd></div>
-      </dl>
-
-      <div class="imovel__acoes">
-        <a class="btn btn--ouro" href="#cadastro">Falar com um corretor</a>
-        <a class="btn btn--linha-clara" href="assets/books/vila-santiago.pdf" target="_blank" rel="noopener">Abrir o book</a>
-      </div>
-      <p class="imovel__nota">Entrada parcelada em até 100x, sem tarifas bancárias.</p>
-    </div>
-
-    <div class="imovel__previas">
-      <a class="previa" href="assets/books/vila-santiago.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/vila-santiago/01.jpg" alt="Portaria do Vila Santiago ao pôr do sol" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Portaria</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/vila-santiago.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/vila-santiago/02.jpg" alt="Piscina do Vila Santiago" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Piscina</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/vila-santiago.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/vila-santiago/03.jpg" alt="Sala de estar decorada de uma unidade" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Sala de estar</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/vila-santiago.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/vila-santiago/04.jpg" alt="Churrasqueira e área de convívio" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Churrasqueira</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-    </div>
-  </article>
-
-  <!-- ───────── Parque dos Monarcas ───────── -->
-  <article class="imovel limite" id="parque-dos-monarcas">
-    <div class="imovel__ficha">
-      <p class="imovel__conta">03 / 03</p>
-      <p class="imovel__marca">MRV · Salvador</p>
-      <h3 class="imovel__nome">Parque dos Monarcas</h3>
-      <p class="imovel__lugar">Rua B, s/n — Mussurunga II</p>
-
-      <dl class="dados">
-        <div><dt>Quartos</dt><dd>2, opção de área privativa</dd></div>
-        <div><dt>Área privativa</dt><dd>41,40 m²</dd></div>
-        <div><dt>Unidades</dt><dd>380, com 427 vagas</dd></div>
-        <div><dt>Lazer</dt><dd>Piscinas, gourmet, salão de festas, playground, pomar</dd></div>
-      </dl>
-
-      <div class="imovel__acoes">
-        <a class="btn btn--ouro" href="#cadastro">Falar com um corretor</a>
-        <a class="btn btn--linha-clara" href="assets/books/parque-dos-monarcas.pdf" target="_blank" rel="noopener">Abrir o book</a>
-      </div>
-      <p class="imovel__nota">Dentro da Cidade Sete Sóis Paralela, com vaga de garagem.</p>
-    </div>
-
-    <div class="imovel__previas">
-      <a class="previa" href="assets/books/parque-dos-monarcas.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/parque-dos-monarcas/01.jpg" alt="Entrada do Parque dos Monarcas" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Entrada</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/parque-dos-monarcas.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/parque-dos-monarcas/02.jpg" alt="Piscinas adulto e infantil" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Piscinas</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/parque-dos-monarcas.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/parque-dos-monarcas/03.jpg" alt="Espaço gourmet do condomínio" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Espaço gourmet</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-      <a class="previa" href="assets/books/parque-dos-monarcas.pdf" target="_blank" rel="noopener">
-        <img src="assets/img/parque-dos-monarcas/04.jpg" alt="Salão de festas do condomínio" width="1400" height="1000" loading="lazy">
-        <span class="previa__nome">Salão de festas</span>
-        <span class="previa__abrir">Abrir PDF</span>
-      </a>
-    </div>
-  </article>
-
-  <p class="limite aviso">
-    Imagens meramente ilustrativas dos books oficiais. Consulte o memorial descritivo quanto aos
-    itens entregues. Condições sujeitas a análise de crédito e às regras de cada construtora.
-  </p>
-</section>
-
-<!-- ════════════════════════════════ CONSTRUTORAS ════════════════════════════════ -->
-<section class="construtoras" id="construtoras">
-  <div class="limite">
-    <div class="construtoras__topo">
-      <div>
-        <p class="rotulo">Rede de parceiros</p>
-        <h2 class="titulo">Trabalhamos com<br><span>todas elas</span></h2>
-      </div>
-      <p class="construtoras__linha">
-        Você compara empreendimento, condição e prazo de cada construtora no mesmo atendimento,
-        com financiamento pela Caixa e o Minha Casa, Minha Vida na mesa.
-      </p>
-    </div>
-
-    <ul class="marcas">
-      <li><img src="assets/parceiros/tenda-v2.png" alt="Tenda" loading="lazy"></li>
-      <li><img src="assets/parceiros/mrv.png" alt="MRV" loading="lazy"></li>
-      <li><img src="assets/parceiros/direcional.png" alt="Direcional" loading="lazy"></li>
-      <li><img src="assets/parceiros/lmarquezzo.png" alt="L. Marquezzo" loading="lazy"></li>
-      <li><img src="assets/parceiros/sertenge.png" alt="Sertenge" loading="lazy"></li>
-      <li><img src="assets/parceiros/pejota.png" alt="Pejota Empreendimentos" loading="lazy"></li>
-      <li><img src="assets/parceiros/santana.png" alt="Santana Empreendimentos" loading="lazy"></li>
-      <li><img src="assets/parceiros/singcred.png" alt="SingCred" loading="lazy"></li>
-      <li><img src="assets/parceiros/caixa.png" alt="Caixa Econômica Federal" loading="lazy"></li>
-      <li><img src="assets/parceiros/mcmv.png" alt="Minha Casa Minha Vida" loading="lazy"></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ════════════════════════════════ COMO PARTICIPAR ════════════════════════════════ -->
-<section class="caminho" id="caminho">
-  <div class="limite">
-    <div class="caminho__topo">
-      <div>
-        <p class="rotulo">Minha Casa, Minha Vida</p>
-        <h2 class="titulo">Quatro passos<br>até a <span>chave na mão</span></h2>
-      </div>
-      <p class="caminho__linha">
-        O programa do Governo Federal dá o subsídio e o juro menor, operados pela Caixa.
-        A parte burocrática — simulação, papelada, contrato — fica com o nosso time.
-      </p>
-    </div>
-
-    <ol class="passos">
-      <li data-surge>
-        <span class="passos__num">01</span>
-        <h3>Você se cadastra</h3>
-        <p>Preenche o formulário aqui embaixo. Um corretor entra em contato no mesmo dia.</p>
-      </li>
-      <li data-surge>
-        <span class="passos__num">02</span>
-        <h3>A gente simula</h3>
-        <p>Analisamos sua renda, o subsídio a que você tem direito e a parcela que cabe no mês.</p>
-      </li>
-      <li data-surge>
-        <span class="passos__num">03</span>
-        <h3>Você escolhe</h3>
-        <p>Visita, planta e condição de cada construtora, comparadas lado a lado.</p>
-      </li>
-      <li data-surge>
-        <span class="passos__num">04</span>
-        <h3>Assina e muda</h3>
-        <p>Cuidamos da documentação e do acompanhamento da obra até a entrega das chaves.</p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- ════════════════════════════════ CADASTRO ════════════════════════════════ -->
-<section class="cadastro" id="cadastro">
-  <div class="limite cadastro__grade">
-
-    <aside class="cadastro__lado">
-      <p class="rotulo">Cadastro</p>
-      <h2 class="titulo">Cadastre-se<br>e <span>aproveite</span></h2>
-      <p class="cadastro__texto">
-        Preencha seus dados e fale com um dos nossos especialistas. Vamos te ajudar
-        a conquistar o seu novo lar.
-      </p>
-
-      <ul class="cadastro__lista">
-        <li>Simulação gratuita e sem compromisso</li>
-        <li>Resposta no mesmo dia, direto no seu WhatsApp</li>
-        <li>Atendimento com corretor da Conrado, não com robô</li>
-      </ul>
-
-      <img class="cadastro__selo" src="assets/marca/selo-feirao.png" alt="" width="867" height="1100" loading="lazy">
-    </aside>
-
-    <div class="cadastro__caixa">
-      <form class="forma" id="forma" novalidate>
-        <p class="forma__topo">
-          <span>Leva menos de 1 minuto</span>
-          <span class="forma__passo">Campos com <i>*</i> são obrigatórios</span>
-        </p>
-
-        <div class="campo">
-          <label for="nome">Nome completo <i aria-hidden="true">*</i></label>
-          <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar" required>
-          <p class="campo__erro" data-erro="nome"></p>
+      <div class="faixa hero__interno">
+        <div class="hero__selo" data-animar="selo">
+          <img src="assets/logos/feirao-conrado.png" alt="Feirão Conrado — Minha casa, minha conquista" width="867"
+            height="1100">
         </div>
 
-        <div class="campo">
-          <label for="zap">WhatsApp <i aria-hidden="true">*</i></label>
-          <input id="zap" name="zap" type="tel" inputmode="tel" autocomplete="tel" placeholder="(71) 90000-0000" maxlength="16" required>
-          <p class="campo__dica">É por aqui que o corretor vai falar com você.</p>
-          <p class="campo__erro" data-erro="zap"></p>
-        </div>
-
-        <div class="dupla">
-          <div class="campo">
-            <label for="cidade">Onde mora <i aria-hidden="true">*</i></label>
-            <input id="cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="Cidade" required>
-            <p class="campo__erro" data-erro="cidade"></p>
+        <div class="hero__texto">
+          <h1 data-animar="2">O momento<br>de conquistar<br>seu imóvel é<br><span
+              class="hero-agora-destaque">AGORA!</span></h1>
+          <p class="hero__linha" data-animar="3">
+            Condições especiais, facilidades exclusivas e o apoio que você precisa para realizar o sonho da casa
+            própria.
+          </p>
+          <div class="hero__acoes" data-animar="4">
+            <a class="botao botao--ouro-contorno" href="#cadastro">QUERO APROVEITAR</a>
           </div>
-          <div class="campo">
-            <label for="bairro">Bairro <i aria-hidden="true">*</i></label>
-            <input id="bairro" name="bairro" type="text" autocomplete="address-level3" placeholder="Bairro" required>
-            <p class="campo__erro" data-erro="bairro"></p>
+        </div>
+      </div>
+
+      <p class="hero__rolagem" aria-hidden="true"><span></span>role para conhecer</p>
+    </section>
+
+    <!-- ══════════════════════════════════ SEÇÃO VÍDEO PROMO (INSPIRADO NA REFERÊNCIA DO USUÁRIO) ══════════════════════════════════ -->
+    <section class="secao-video-promo" id="video">
+      <div class="faixa">
+
+        <!-- Bloco Principal do Vídeo em Estilo Cartão Escuro com Layout Dividido -->
+        <div class="video-promo-card">
+          <div class="video-promo-grid">
+
+            <!-- Esquerda: Título, Descrição e Botão -->
+            <div class="video-promo-info">
+              <p class="sobrancelha sobrancelha--ouro">VÍDEO OFICIAL</p>
+              <h2 class="video-promo-titulo">Garantindo a melhor experiência da escolha à entrega das chaves</h2>
+              <p class="video-promo-desc">
+                Assista ao vídeo e conheça a estrutura completa, a mentoria dos corretores e as facilidades exclusivas
+                que pré-selecionamos para você no Feirão Conrado.
+              </p>
+              <a href="#cadastro" class="botao-video-play-pill">
+                QUERO APROVEITAR
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="icone-seta">
+                  <path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Direita: Vídeo do Empreendimento Rodando Sozinho, Sem Som e com Play/Pause no Próprio Vídeo -->
+            <div class="video-promo-player-box" data-video-caixa data-estado="tocando">
+              <video id="video-empreendimento" class="video-promo-player" src="assets/video/cidade-sete-sois-mrv.mp4?v=2"
+                poster="assets/img/video-poster.jpg?v=2" data-video-mudo autoplay muted loop playsinline
+                disablepictureinpicture disableremoteplayback preload="auto" fetchpriority="high"
+                aria-label="Vídeo do empreendimento Cidade Sete Sóis — Parque dos Condes, em Salvador (BA)"></video>
+
+              <!-- Play/Pause sobre o vídeo: sempre visível quando pausado -->
+              <button type="button" class="video-toggle-overlay" data-video-toggle="video-empreendimento"
+                aria-controls="video-empreendimento" aria-label="Pausar vídeo">
+                <svg class="icone-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <rect x="6" y="4" width="4.2" height="16" rx="1.2" />
+                  <rect x="13.8" y="4" width="4.2" height="16" rx="1.2" />
+                </svg>
+                <svg class="icone-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path
+                    d="M8 5.14c0-.8.88-1.29 1.56-.87l11.2 6.86c.65.4.65 1.34 0 1.74l-11.2 6.86c-.68.42-1.56-.07-1.56-.87V5.14z" />
+                </svg>
+              </button>
+            </div>
+
           </div>
         </div>
 
-        <div class="campo">
-          <label for="renda">Renda familiar <i aria-hidden="true">*</i></label>
-          <select id="renda" name="renda" required>
-            <option value="" selected disabled>Selecione a faixa</option>
-            <option>Até R$ 2.640</option>
-            <option>De R$ 2.640 a R$ 4.400</option>
-            <option>De R$ 4.400 a R$ 8.000</option>
-            <option>De R$ 8.000 a R$ 12.000</option>
-            <option>Acima de R$ 12.000</option>
-          </select>
-          <p class="campo__dica">Serve para calcular o subsídio a que você tem direito.</p>
-          <p class="campo__erro" data-erro="renda"></p>
+        <!-- Carrossel Infinito das Construtoras e Parceiros -->
+        <div class="hero__marcas">
+          <div class="esteira" data-esteira>
+            <div class="esteira__fita">
+              <ul class="esteira__lista">
+                <li><img src="assets/logos/partners/tenda-v2.png" alt="Tenda"></li>
+                <li><img src="assets/logos/partners/mrv.png" alt="MRV"></li>
+                <li><img src="assets/logos/partners/direcional.png" alt="Direcional"></li>
+                <li><img src="assets/logos/partners/lmarquezzo.png" alt="L. Marquezzo"></li>
+                <li><img src="assets/logos/partners/sertenge.png" alt="Sertenge"></li>
+                <li><img src="assets/logos/partners/pejota.png" alt="Pejota Empreendimentos"></li>
+                <li><img src="assets/logos/partners/santana.png" alt="Santana Empreendimentos"></li>
+                <li><img src="assets/logos/partners/singcred.png" alt="SingCred"></li>
+                <li><img src="assets/logos/partners/caixa.png" alt="Caixa Econômica Federal"></li>
+                <li><img src="assets/logos/partners/mcmv.png" alt="Minha Casa Minha Vida"></li>
+              </ul>
+              <ul class="esteira__lista" aria-hidden="true">
+                <li><img src="assets/logos/partners/tenda-v2.png" alt=""></li>
+                <li><img src="assets/logos/partners/mrv.png" alt=""></li>
+                <li><img src="assets/logos/partners/direcional.png" alt=""></li>
+                <li><img src="assets/logos/partners/lmarquezzo.png" alt=""></li>
+                <li><img src="assets/logos/partners/sertenge.png" alt=""></li>
+                <li><img src="assets/logos/partners/pejota.png" alt=""></li>
+                <li><img src="assets/logos/partners/santana.png" alt=""></li>
+                <li><img src="assets/logos/partners/singcred.png" alt=""></li>
+                <li><img src="assets/logos/partners/caixa.png" alt=""></li>
+                <li><img src="assets/logos/partners/mcmv.png" alt=""></li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="campo">
-          <label for="corretor">Quem te atendeu <i class="opcional">opcional</i></label>
-          <input id="corretor" name="corretor" type="text" placeholder="Nome do corretor">
+      </div>
+    </section>
+
+
+
+    <!-- ══════════════════════════════════ MINHA CASA MINHA CONQUISTA (MINIMALISTA E PROPORCIONAL) ══════════════════════════════════ -->
+    <section class="secao-conquista-dark" id="sobre">
+      <div class="faixa sobre-grid-2col">
+        <div class="sobre-col-texto">
+          <p class="sobrancelha sobrancelha--ouro">MINHA CASA, MINHA CONQUISTA</p>
+          <h2>A oportunidade perfeita para conquistar a chave do seu novo lar</h2>
+          <p class="parceiros__linha">
+            O Feirão Conrado reúne as melhores opções com subsídio do Minha Casa Minha Vida, facilidade no financiamento
+            CAIXA e entrada parcelada em até 100x.
+          </p>
+
+          <div class="grid-beneficios-dark">
+            <div class="item-beneficio-dark">
+              <div>
+                <h4>Prontos para morar e na planta</h4>
+                <p>Opções nas melhores localizações de Salvador e Lauro de Freitas.</p>
+              </div>
+            </div>
+            <div class="item-beneficio-dark">
+              <div>
+                <h4>Subsídio de até R$ 55 mil</h4>
+                <p>Aproveite os incentivos do governo e taxas reduzidas CAIXA.</p>
+              </div>
+            </div>
+            <div class="item-beneficio-dark">
+              <div>
+                <h4>Análise de crédito na hora</h4>
+                <p>Equipe de correspondentes prontos para aprovar seu financiamento.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.75rem;">
+            <a href="#cadastro" class="botao botao--ouro">Simular meu financiamento</a>
+          </div>
         </div>
 
-        <div class="campo">
-          <label class="aceite">
-            <input id="aceite" name="aceite" type="checkbox" required>
-            <span>Autorizo a Conrado Imobiliária a falar comigo sobre o Feirão Conrado.</span>
-          </label>
-          <p class="campo__erro" data-erro="aceite"></p>
+        <div class="sobre-col-imagem-dark">
+          <div class="card-imagem-moldura">
+            <img src="assets/img/casal-chaves.jpg"
+              alt="Casal baiano celebrando a conquista das chaves do novo apartamento" class="img-conquista-dark">
+            <div class="selo-imagem-badge">
+              <span>Minha Casa, Minha Conquista</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ EMPREENDIMENTOS ══════════════════════════════════ -->
+    <section class="empreendimentos" id="empreendimentos">
+      <div class="faixa">
+        <div class="secao__cabeca">
+          <div>
+            <p class="sobrancelha sobrancelha--ouro">Imóveis participantes</p>
+            <h2>Empreendimentos selecionados<br>para você conhecer</h2>
+          </div>
+          <a href="#cadastro" class="botao-link-ouro">Ver todos os imóveis <svg class="icone-seta" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path d="M4 12h14M13 6l6 6-6 6" />
+            </svg></a>
         </div>
 
-        <button class="btn btn--ouro btn--cheio" type="submit">Quero ser contatado</button>
+        <div class="grade-imoveis">
 
-        <p class="forma__nota">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 8 7 9 4-1 7-4.5 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
-          Seus dados ficam com a equipe da Conrado. Nada de lista de disparo.
+          <article class="imovel" data-revelar>
+            <div class="imovel__foto">
+              <img src="assets/img/veneza-prime/card.jpg" alt="Veneza Prime" width="1200" height="800" loading="lazy">
+            </div>
+            <div class="imovel__corpo">
+              <p class="imovel__construtora">Tenda</p>
+              <h3>Veneza Prime</h3>
+              <p class="imovel__local">Av. Aliomar Baleeiro, 2.137 — Vila Canária</p>
+              <dl class="ficha">
+                <div>
+                  <dt>Quartos</dt>
+                  <dd>2</dd>
+                </div>
+                <div>
+                  <dt>Área privativa</dt>
+                  <dd>35,44 m²</dd>
+                </div>
+                <div>
+                  <dt>Unidades</dt>
+                  <dd>855</dd>
+                </div>
+              </dl>
+              <p class="imovel__destaque">Todas as unidades com varanda*</p>
+              <div class="imovel__acoes">
+                <button class="botao botao--ouro botao--bloco" type="button" data-abrir-imovel="veneza-prime">Ver
+                  empreendimento <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h14M13 6l6 6-6 6" />
+                  </svg></button>
+                <a class="link-book" href="assets/books/veneza-prime.pdf" target="_blank" rel="noopener">Book em PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="imovel" data-revelar>
+            <div class="imovel__foto">
+              <img src="assets/img/vila-santiago/card.jpg" alt="Vila Santiago" width="1200" height="800" loading="lazy">
+            </div>
+            <div class="imovel__corpo">
+              <p class="imovel__construtora">Tenda</p>
+              <h3>Vila Santiago</h3>
+              <p class="imovel__local">Rua Chile, 489 — Recreio Ipitanga</p>
+              <dl class="ficha">
+                <div>
+                  <dt>Quartos</dt>
+                  <dd>2</dd>
+                </div>
+                <div>
+                  <dt>Área privativa</dt>
+                  <dd>35,45 m²</dd>
+                </div>
+                <div>
+                  <dt>Unidades</dt>
+                  <dd>356</dd>
+                </div>
+              </dl>
+              <p class="imovel__destaque">Entrada parcelada em até 100x</p>
+              <div class="imovel__acoes">
+                <button class="botao botao--ouro botao--bloco" type="button" data-abrir-imovel="vila-santiago">Ver
+                  empreendimento <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h14M13 6l6 6-6 6" />
+                  </svg></button>
+                <a class="link-book" href="assets/books/vila-santiago.pdf" target="_blank" rel="noopener">Book em
+                  PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="imovel" data-revelar>
+            <div class="imovel__foto">
+              <img src="assets/img/parque-dos-monarcas/card.jpg" alt="Parque dos Monarcas" width="1200" height="800"
+                loading="lazy">
+            </div>
+            <div class="imovel__corpo">
+              <p class="imovel__construtora">MRV</p>
+              <h3>Parque dos Monarcas</h3>
+              <p class="imovel__local">Rua B, s/n — Mussurunga II</p>
+              <dl class="ficha">
+                <div>
+                  <dt>Quartos</dt>
+                  <dd>2</dd>
+                </div>
+                <div>
+                  <dt>Área privativa</dt>
+                  <dd>41,40 m²</dd>
+                </div>
+                <div>
+                  <dt>Unidades</dt>
+                  <dd>380</dd>
+                </div>
+              </dl>
+              <p class="imovel__destaque">Vaga de garagem inclusa</p>
+              <div class="imovel__acoes">
+                <button class="botao botao--ouro botao--bloco" type="button" data-abrir-imovel="parque-dos-monarcas">Ver
+                  empreendimento <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h14M13 6l6 6-6 6" />
+                  </svg></button>
+                <a class="link-book" href="assets/books/parque-dos-monarcas.pdf" target="_blank" rel="noopener">Book em
+                  PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="imovel" data-revelar>
+            <div class="imovel__foto">
+              <img src="assets/img/conquista-vila-verde/card.jpg" alt="Conquista Vila Verde" width="1200" height="800"
+                loading="lazy">
+            </div>
+            <div class="imovel__corpo">
+              <p class="imovel__construtora">Direcional</p>
+              <h3>Conquista Vila Verde</h3>
+              <p class="imovel__local">Av. Rio Paramirim, s/n — Abrantes</p>
+              <dl class="ficha">
+                <div>
+                  <dt>Quartos</dt>
+                  <dd>2 (garden)</dd>
+                </div>
+                <div>
+                  <dt>Área privativa</dt>
+                  <dd>40,67 m²</dd>
+                </div>
+                <div>
+                  <dt>Unidades</dt>
+                  <dd>680</dd>
+                </div>
+              </dl>
+              <p class="imovel__destaque">Bairro planejado com lazer completo</p>
+              <div class="imovel__acoes">
+                <button class="botao botao--ouro botao--bloco" type="button" data-abrir-imovel="conquista-vila-verde">Ver
+                  empreendimento <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h14M13 6l6 6-6 6" />
+                  </svg></button>
+                <a class="link-book" href="assets/books/conquista-vila-verde.pdf" target="_blank" rel="noopener">Book em
+                  PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="imovel" data-revelar>
+            <div class="imovel__foto">
+              <img src="assets/img/conquista-lauro-de-freitas/card.jpg" alt="Conquista Lauro de Freitas" width="1200" height="800"
+                loading="lazy">
+            </div>
+            <div class="imovel__corpo">
+              <p class="imovel__construtora">Direcional</p>
+              <h3>Conquista Lauro de Freitas</h3>
+              <p class="imovel__local">Estrada do Coco — Lauro de Freitas</p>
+              <dl class="ficha">
+                <div>
+                  <dt>Quartos</dt>
+                  <dd>1 e 2</dd>
+                </div>
+                <div>
+                  <dt>Área privativa</dt>
+                  <dd>36,24 m²</dd>
+                </div>
+                <div>
+                  <dt>Unidades</dt>
+                  <dd>520</dd>
+                </div>
+              </dl>
+              <p class="imovel__destaque">Lazer de clube com +15 itens</p>
+              <div class="imovel__acoes">
+                <button class="botao botao--ouro botao--bloco" type="button" data-abrir-imovel="conquista-lauro-de-freitas">Ver
+                  empreendimento <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h14M13 6l6 6-6 6" />
+                  </svg></button>
+                <a class="link-book" href="assets/books/conquista-lauro-de-freitas.pdf" target="_blank" rel="noopener">Book em
+                  PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="imovel" data-revelar>
+            <div class="imovel__foto">
+              <img src="assets/img/morada-das-estacoes/card.jpg" alt="Morada das Estações" width="1200" height="800"
+                loading="lazy">
+            </div>
+            <div class="imovel__corpo">
+              <p class="imovel__construtora">Tenda</p>
+              <h3>Morada das Estações</h3>
+              <p class="imovel__local">Av. Aliomar Baleeiro — São Cristóvão</p>
+              <dl class="ficha">
+                <div>
+                  <dt>Quartos</dt>
+                  <dd>2</dd>
+                </div>
+                <div>
+                  <dt>Área privativa</dt>
+                  <dd>38,54 m²</dd>
+                </div>
+                <div>
+                  <dt>Unidades</dt>
+                  <dd>679</dd>
+                </div>
+              </dl>
+              <p class="imovel__destaque">Próximo ao Metrô Mussurunga</p>
+              <div class="imovel__acoes">
+                <button class="botao botao--ouro botao--bloco" type="button" data-abrir-imovel="morada-das-estacoes">Ver
+                  empreendimento <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h14M13 6l6 6-6 6" />
+                  </svg></button>
+                <a class="link-book" href="assets/books/morada-das-estacoes.pdf" target="_blank" rel="noopener">Book em
+                  PDF</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="imovel" data-revelar>
+            <div class="imovel__foto">
+              <img src="assets/img/encanto-piata/card.jpg" alt="Encanto Piatã" width="1200" height="800"
+                loading="lazy">
+            </div>
+            <div class="imovel__corpo">
+              <p class="imovel__construtora">Tenda</p>
+              <h3>Encanto Piatã</h3>
+              <p class="imovel__local">Rua Colina das Esmeraldas — Piatã</p>
+              <dl class="ficha">
+                <div>
+                  <dt>Quartos</dt>
+                  <dd>2</dd>
+                </div>
+                <div>
+                  <dt>Área privativa</dt>
+                  <dd>38,54 m²</dd>
+                </div>
+                <div>
+                  <dt>Unidades</dt>
+                  <dd>1.611</dd>
+                </div>
+              </dl>
+              <p class="imovel__destaque">Torres de 15 andares perto da praia</p>
+              <div class="imovel__acoes">
+                <button class="botao botao--ouro botao--bloco" type="button" data-abrir-imovel="encanto-piata">Ver
+                  empreendimento <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 12h14M13 6l6 6-6 6" />
+                  </svg></button>
+                <a class="link-book" href="assets/books/encanto-piata.pdf" target="_blank" rel="noopener">Book em
+                  PDF</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Barra Escura de Estatísticas (Estilo Referência MODO abaixo dos imóveis) -->
+        <div class="stats-dark-bar-referencia" data-contador-grupo>
+          <div class="stat-dark-item">
+            <h3 data-contador data-valor="1000" data-prefixo="+" data-formato="milhar">+1.000</h3>
+            <p>Imóveis no feirão</p>
+          </div>
+          <div class="stat-dark-item">
+            <h3 data-contador data-valor="100" data-sufixo="%">100%</h3>
+            <p>Análise gratuita</p>
+          </div>
+          <div class="stat-dark-item">
+            <h3 data-contador data-valor="55" data-prefixo="R$ " data-sufixo=" mil">R$ 55 mil</h3>
+            <p>Subsídio MCMV</p>
+          </div>
+          <div class="stat-dark-item">
+            <h3 data-contador data-valor="10" data-sufixo="+">10+</h3>
+            <p>Construtoras parceiras</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SEÇÃO FEIRÃO — LAYOUT ARCHISTUDIO DO ZERO ═══════════ -->
+    <section class="arc" id="sobre-feirao">
+      <div class="faixa">
+
+        <!-- ① MOSAICO 4 COLUNAS ESCALONADAS -->
+        <div class="arc__mosaic">
+          <div class="arc__col arc__col--short"><img src="assets/img/galeria/portaria.png" alt="Portaria"></div>
+          <div class="arc__col arc__col--tall"><img src="assets/img/galeria/sala.png" alt="Sala decorada"></div>
+          <div class="arc__col arc__col--tall"><img src="assets/img/galeria/piscina.png" alt="Piscina"></div>
+          <div class="arc__col arc__col--short">
+            <img src="assets/img/galeria/jardim.png" alt="Jardim">
+            <div class="arc__col-words">
+              <span>OPORTUNIDADE</span>
+              <span>CONDIÇÕES ÚNICAS</span>
+              <span>VISUALIZAÇÃO</span>
+              <span>FUTURO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ② TÍTULO GRANDE -->
+        <h2 class="arc__title">FEIRÃO CONRADO</h2>
+        <p class="arc__sub">Arquitetura, condições especiais e financiamento ao seu alcance na Bahia.</p>
+
+        <!-- ③ SOBRE — pill + 2 colunas -->
+        <div class="arc__about">
+          <span class="arc__pill">SOBRE O FEIRÃO</span>
+          <div class="arc__about-grid">
+            <p class="arc__about-lead">Investigamos o mercado, selecionamos os melhores empreendimentos e criamos um
+              ambiente seguro para você conquistar a casa própria.</p>
+            <div class="arc__about-body">
+              <p><strong>FEIRÃO CONRADO</strong> é um evento exclusivo reunindo correspondentes bancários, construtoras
+                renomadas e a equipe Conrado Imobiliária para oferecer suporte completo no financiamento habitacional.
+              </p>
+              <p>Análise de crédito gratuita, subsídio de até R$ 55 mil e entrada parcelada em até 100x com a segurança
+                da Caixa Econômica Federal.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ④ DOIS CARDS DESTAQUE -->
+        <div class="arc__duo">
+          <div class="arc__card-key">
+            <div>
+              <h3>+1.000 FAMÍLIAS REALIZARAM O SONHO DA CASA PRÓPRIA</h3>
+              <p>Condições exclusivas com entrada parcelada em 100x e apoio habitacional CAIXA.</p>
+              <a href="#cadastro" class="arc__btn-pill">SAIBA MAIS →</a>
+            </div>
+            <img src="assets/img/galeria/quarto.png" alt="Interior decorado" class="arc__key-img">
+          </div>
+          <div class="arc__card-port">
+            <img src="assets/img/galeria/churrasqueira.png" alt="Área gourmet" class="arc__port-bg">
+            <div class="arc__port-overlay"></div>
+            <div class="arc__port-content">
+              <h3>NOSSO PORTFÓLIO INCLUI 10+ CONSTRUTORAS PARCEIRAS</h3>
+              <p>Opções prontas para morar e lançamentos na planta em Salvador e Lauro de Freitas.</p>
+              <a href="#detalhes" class="arc__btn-pill">VER PORTFÓLIO →</a>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ DETALHES DOS EMPREENDIMENTOS (MOSAICO + FICHA DOS BOOKS OFICIAIS) ══════════════════════════════════ -->
+    <section class="detalhes-imoveis" id="detalhes">
+      <div class="faixa">
+
+        <div class="secao__cabeca">
+          <div>
+            <p class="sobrancelha sobrancelha--ouro">Direto dos books oficiais</p>
+            <h2>Cada empreendimento<br>por dentro, em detalhes</h2>
+          </div>
+          <p class="secao__apoio">
+            Ficha técnica completa, lazer entregue e o que existe ao redor. Tudo conferido nos books
+            oficiais da Tenda e da MRV, com as distâncias reais informadas pelas construtoras.
+          </p>
+        </div>
+
+        <!-- ─────────────────────────── 01 · VENEZA PRIME ─────────────────────────── -->
+        <article class="detalhe-bloco" data-revelar>
+          <div class="detalhe-info">
+            <p class="detalhe-contador"><span>01</span> / 07</p>
+            <p class="detalhe-marca">Tenda · Salvador</p>
+            <h3 class="detalhe-titulo">Veneza Prime</h3>
+            <p class="detalhe-local">Av. Aliomar Baleeiro, 2.137 — Vila Canária, CEP 41.390-710</p>
+
+            <dl class="detalhe-ficha">
+              <div>
+                <dt>Quartos</dt>
+                <dd>2, plantas com e sem varanda</dd>
+              </div>
+              <div>
+                <dt>Área privativa</dt>
+                <dd>35,44 m²</dd>
+              </div>
+              <div>
+                <dt>Unidades</dt>
+                <dd>855, sendo 45 reversíveis</dd>
+              </div>
+              <div>
+                <dt>Blocos</dt>
+                <dd>3 torres — térreo + 17 pavimentos, 16 unidades por andar</dd>
+              </div>
+              <div>
+                <dt>Vagas</dt>
+                <dd>79 para carro (4 PCD) e 24 para moto</dd>
+              </div>
+              <div>
+                <dt>Terreno</dt>
+                <dd>15.240,77 m²</dd>
+              </div>
+            </dl>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Lazer entregue equipado e ambientado</p>
+              <ul class="detalhe-tags">
+                <li>Piscina adulto e infantil</li>
+                <li>Quadra descoberta</li>
+                <li>Salão de festas</li>
+                <li>Churrasqueira gourmet</li>
+                <li>Play kids</li>
+                <li>Play baby</li>
+                <li>Brinquedoteca</li>
+                <li>Espaço teen</li>
+                <li>Sport bar</li>
+                <li>Espaço office</li>
+                <li>Espaço saúde</li>
+                <li>Fitness interno e externo</li>
+                <li>Play pet</li>
+                <li>Vaga para carro compartilhado</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Ao redor</p>
+              <ul class="detalhe-perto">
+                <li><span>Assaí Atacadista</span><span>250 m · 4 min</span></li>
+                <li><span>Escola Estadual Vila Canária</span><span>750 m · 11 min</span></li>
+                <li><span>Atakarejo</span><span>1,3 km · 3 min</span></li>
+                <li><span>Jardim Botânico de Salvador</span><span>2,2 km · 9 min</span></li>
+                <li><span>Metrô Campinas de Pirajá</span><span>2,5 km · 7 min</span></li>
+                <li><span>Shopping Paralela</span><span>10,1 km · 16 min</span></li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Entregue com</p>
+              <ul class="detalhe-tags detalhe-tags--claras">
+                <li>Wi-Fi nas áreas comuns</li>
+                <li>Economizadores de água e energia</li>
+                <li>Coleta seletiva de lixo</li>
+                <li>Piso cerâmico no banheiro, cozinha e área de serviço</li>
+                <li>Parede com acabamento liso</li>
+                <li>Teto texturizado</li>
+                <li>Torneira em metal</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-acoes">
+              <a class="botao botao--ouro" href="#cadastro">Falar com um corretor</a>
+              <a class="botao botao--fantasma" href="assets/books/veneza-prime.pdf" target="_blank" rel="noopener">Abrir
+                o book</a>
+            </div>
+
+            <p class="detalhe-nota">Todas as unidades com varanda, exceto as térreas. Tipologia 16PP (T+17).</p>
+          </div>
+
+          <div class="detalhe-mosaico">
+            <figure class="detalhe-tile detalhe-tile--largo">
+              <img src="assets/img/veneza-prime/02-portaria.jpg" alt="Portaria do Veneza Prime" loading="lazy">
+              <figcaption>Portaria</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/veneza-prime/card.jpg" alt="Torres do Veneza Prime ao entardecer" loading="lazy">
+              <figcaption>As 3 torres</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/veneza-prime/01-piscina.jpg" alt="Piscina do Veneza Prime" loading="lazy">
+              <figcaption>Piscina</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/veneza-prime/03-varanda.jpg" alt="Varanda com vista do Veneza Prime" loading="lazy">
+              <figcaption>Varanda com vista</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/veneza-prime/04-area-externa.jpg" alt="Vaga do carro compartilhado do Veneza Prime"
+                loading="lazy">
+              <figcaption>Carro compartilhado</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ─────────────────────────── 02 · VILA SANTIAGO ─────────────────────────── -->
+        <article class="detalhe-bloco detalhe-bloco--espelhado" data-revelar>
+          <div class="detalhe-info">
+            <p class="detalhe-contador"><span>02</span> / 07</p>
+            <p class="detalhe-marca">Tenda · Lauro de Freitas</p>
+            <h3 class="detalhe-titulo">Vila Santiago</h3>
+            <p class="detalhe-local">Rua Chile, 489, QD. 17 — Recreio Ipitanga, CEP 42.700-230</p>
+
+            <dl class="detalhe-ficha">
+              <div>
+                <dt>Quartos</dt>
+                <dd>2, plantas com e sem varanda</dd>
+              </div>
+              <div>
+                <dt>Área privativa</dt>
+                <dd>35,45 m²</dd>
+              </div>
+              <div>
+                <dt>Unidades</dt>
+                <dd>356, sendo 11 reversíveis para PCD</dd>
+              </div>
+              <div>
+                <dt>Blocos</dt>
+                <dd>3 torres — tipologia T+9</dd>
+              </div>
+              <div>
+                <dt>Vagas</dt>
+                <dd>78 para carro, 146 para moto, 5 PCD e 4 para idoso</dd>
+              </div>
+              <div>
+                <dt>Terreno</dt>
+                <dd>12.022,95 m²</dd>
+              </div>
+            </dl>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Lazer entregue equipado e ambientado</p>
+              <ul class="detalhe-tags">
+                <li>Piscina adulto e infantil</li>
+                <li>Deck e espaço ducha</li>
+                <li>Quadra de streetball</li>
+                <li>Churrasqueira gourmet</li>
+                <li>Salão de festas com coworking</li>
+                <li>Play kids</li>
+                <li>Play baby</li>
+                <li>Play pet</li>
+                <li>Múltipla estação</li>
+                <li>Espaço office</li>
+                <li>Mini market</li>
+                <li>Bicicletário</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Ao redor</p>
+              <ul class="detalhe-perto">
+                <li><span>Estrada do Coco</span><span>500 m · 7 min</span></li>
+                <li><span>Assaí Atacadista</span><span>1,5 km · 4 min</span></li>
+                <li><span>Hospital Aeroporto</span><span>2,1 km · 4 min</span></li>
+                <li><span>Salvador Norte Shopping</span><span>4,4 km · 9 min</span></li>
+                <li><span>Aeroporto de Salvador</span><span>5,7 km · 9 min</span></li>
+                <li><span>Praia de Ipitanga</span><span>6,7 km · 18 min</span></li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Diferenciais do book</p>
+              <ul class="detalhe-tags detalhe-tags--claras">
+                <li>Carro compartilhado 24h, com reserva online</li>
+                <li>Sem tarifas bancárias</li>
+                <li>Entrada parcelada em até 100x</li>
+                <li>ITBI e documentação grátis</li>
+                <li>Individualização de água e reservatório de reúso</li>
+                <li>Wi-Fi nas áreas comuns</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-acoes">
+              <a class="botao botao--ouro" href="#cadastro">Falar com um corretor</a>
+              <a class="botao botao--fantasma" href="assets/books/vila-santiago.pdf" target="_blank"
+                rel="noopener">Abrir o book</a>
+            </div>
+
+            <p class="detalhe-nota">Unidades com varanda a partir do 1º pavimento. Mini market como sugestão de uso.</p>
+          </div>
+
+          <div class="detalhe-mosaico">
+            <figure class="detalhe-tile detalhe-tile--largo">
+              <img src="assets/img/vila-santiago/card.jpg" alt="Fachada do Vila Santiago ao entardecer" loading="lazy">
+              <figcaption>Fachada</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/vila-santiago/01-piscina.jpg" alt="Piscina do Vila Santiago" loading="lazy">
+              <figcaption>Piscina</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/vila-santiago/02-churrasqueira.jpg" alt="Churrasqueira e quadra do Vila Santiago"
+                loading="lazy">
+              <figcaption>Churrasqueira</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/vila-santiago/03-playground.jpg" alt="Play kids do Vila Santiago" loading="lazy">
+              <figcaption>Play kids</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/vila-santiago/04-office.jpg" alt="Espaço office do Vila Santiago" loading="lazy">
+              <figcaption>Espaço office</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ─────────────────────── 03 · PARQUE DOS MONARCAS ─────────────────────── -->
+        <article class="detalhe-bloco" data-revelar>
+          <div class="detalhe-info">
+            <p class="detalhe-contador"><span>03</span> / 07</p>
+            <p class="detalhe-marca">MRV · Salvador</p>
+            <h3 class="detalhe-titulo">Parque dos Monarcas</h3>
+            <p class="detalhe-local">Rua B, s/n — Mussurunga II, dentro da Cidade Sete Sóis Paralela</p>
+
+            <dl class="detalhe-ficha">
+              <div>
+                <dt>Quartos</dt>
+                <dd>2, com opção de área privativa</dd>
+              </div>
+              <div>
+                <dt>Área privativa</dt>
+                <dd>41,40 m² + quintal de 10,15 m² a 35,53 m²</dd>
+              </div>
+              <div>
+                <dt>Unidades</dt>
+                <dd>380, sendo 12 adaptáveis para PCD</dd>
+              </div>
+              <div>
+                <dt>Vagas</dt>
+                <dd>427 vagas de veículos</dd>
+              </div>
+              <div>
+                <dt>Terreno</dt>
+                <dd>18.410,49 m²</dd>
+              </div>
+              <div>
+                <dt>Bairro planejado</dt>
+                <dd>Smartcidade da MRV, ao lado do Alphaville II</dd>
+              </div>
+            </dl>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Lazer do condomínio</p>
+              <ul class="detalhe-tags">
+                <li>Piscinas adulto e infantil</li>
+                <li>Salão de festas</li>
+                <li>Espaço gourmet</li>
+                <li>Playground</li>
+                <li>Espaço kids</li>
+                <li>Fitness descoberto</li>
+                <li>Previsão de pomar</li>
+                <li>Bicicletário</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Ao redor</p>
+              <ul class="detalhe-perto">
+                <li><span>Avenida Paralela</span><span>1 min</span></li>
+                <li><span>Alphaville II</span><span>ao lado</span></li>
+                <li><span>Metrô e terminais de ônibus</span><span>a poucos metros</span></li>
+                <li><span>Salvador Norte Shopping</span><span>no entorno</span></li>
+                <li><span>Aeroporto Internacional</span><span>no entorno</span></li>
+                <li><span>Praias de Piatã e Itapuã</span><span>no entorno</span></li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Diferenciais do book</p>
+              <ul class="detalhe-tags detalhe-tags--claras">
+                <li>Ponto de ar-condicionado nos quartos</li>
+                <li>Cancela de veículos</li>
+                <li>Sensor de presença em halls, escadas e circulações</li>
+                <li>Previsão de medição individual de água</li>
+                <li>+74 mil m² de área verde na Smartcidade</li>
+                <li>Bairro monitorado por câmeras e guaritas</li>
+                <li>Ciclovias, praças, parque e pista de skate</li>
+                <li>Quadras de beach tennis e pet place</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-acoes">
+              <a class="botao botao--ouro" href="#cadastro">Falar com um corretor</a>
+              <a class="botao botao--fantasma" href="assets/books/parque-dos-monarcas.pdf" target="_blank"
+                rel="noopener">Abrir o book</a>
+            </div>
+
+            <p class="detalhe-nota">Com a Caixa: subsídio de até R$ 55 mil, uso do FGTS e financiamento em até 420
+              meses.</p>
+          </div>
+
+          <div class="detalhe-mosaico">
+            <figure class="detalhe-tile detalhe-tile--largo">
+              <img src="assets/img/parque-dos-monarcas/card.jpg" alt="Entrada do Parque dos Monarcas" loading="lazy">
+              <figcaption>Entrada</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/parque-dos-monarcas/01-piscinas.jpg" alt="Piscinas do Parque dos Monarcas"
+                loading="lazy">
+              <figcaption>Piscinas</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/parque-dos-monarcas/02-gourmet.jpg" alt="Espaço gourmet do Parque dos Monarcas"
+                loading="lazy">
+              <figcaption>Espaço gourmet</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/parque-dos-monarcas/03-salao-festas.jpg" alt="Salão de festas do Parque dos Monarcas"
+                loading="lazy">
+              <figcaption>Salão de festas</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/parque-dos-monarcas/04-playground.jpg" alt="Playground do Parque dos Monarcas"
+                loading="lazy">
+              <figcaption>Playground</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ─────────────────────────── 04 · CONQUISTA VILA VERDE ─────────────────────────── -->
+        <article class="detalhe-bloco detalhe-bloco--espelhado" data-revelar>
+          <div class="detalhe-info">
+            <p class="detalhe-contador"><span>04</span> / 07</p>
+            <p class="detalhe-marca">Direcional · Abrantes / Camaçari</p>
+            <h3 class="detalhe-titulo">Conquista Vila Verde</h3>
+            <p class="detalhe-local">Av. Rio Paramirim, s/n — Abrantes, Camaçari/BA</p>
+
+            <dl class="detalhe-ficha">
+              <div>
+                <dt>Quartos</dt>
+                <dd>2, com opções de garden privativo</dd>
+              </div>
+              <div>
+                <dt>Área privativa</dt>
+                <dd>40,67 m² até 47,50 m²</dd>
+              </div>
+              <div>
+                <dt>Unidades</dt>
+                <dd>680, sendo 21 unidades PCD e 68 gardens</dd>
+              </div>
+              <div>
+                <dt>Blocos</dt>
+                <dd>34 torres — 5 pavimentos (térreo + 4)</dd>
+              </div>
+              <div>
+                <dt>Vagas</dt>
+                <dd>339 vagas para carro e 75 para moto</dd>
+              </div>
+              <div>
+                <dt>Terreno</dt>
+                <dd>26.982,83 m²</dd>
+              </div>
+            </dl>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Lazer entregue equipado e mobiliado</p>
+              <ul class="detalhe-tags">
+                <li>Piscina adulto com deck molhado</li>
+                <li>Piscina infantil</li>
+                <li>Salão de festas</li>
+                <li>Varanda da churrasqueira</li>
+                <li>Play kids</li>
+                <li>Play baby</li>
+                <li>Espaço pet</li>
+                <li>Quadra descoberta</li>
+                <li>Espaço fitness</li>
+                <li>Espaço jogos</li>
+                <li>Espaço fresh</li>
+                <li>Espaço piquenique</li>
+                <li>Bicicletário</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Ao redor</p>
+              <ul class="detalhe-perto">
+                <li><span>Ponto de ônibus</span><span>7 min</span></li>
+                <li><span>Novo Mix Supermercados</span><span>8 min</span></li>
+                <li><span>Farmácia Drogasil</span><span>8 min</span></li>
+                <li><span>Padaria Panvilla</span><span>6 min</span></li>
+                <li><span>Shopping Busca Vida</span><span>3 min</span></li>
+                <li><span>Outlet Premium Salvador</span><span>10 min</span></li>
+                <li><span>Praia de Jauá</span><span>13 min</span></li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Diferenciais e sustentabilidade</p>
+              <ul class="detalhe-tags detalhe-tags--claras">
+                <li>Piso laminado nos quartos (exceto térreo)</li>
+                <li>Previsão de ar-condicionado split nas unidades</li>
+                <li>Bicicletas compartilhadas no condomínio</li>
+                <li>Portão e acesso automatizados</li>
+                <li>Iluminação em LED e sensor de presença nos halls</li>
+                <li>Bacias dual flush e torneiras com arejador</li>
+                <li>Coleta seletiva e paisagismo nativo</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-acoes">
+              <a class="botao botao--ouro" href="#cadastro">Falar com um corretor</a>
+              <a class="botao botao--fantasma" href="assets/books/conquista-vila-verde.pdf" target="_blank"
+                rel="noopener">Abrir o book</a>
+            </div>
+
+            <p class="detalhe-nota">Entrada 100% facilitada com a Direcional e ITBI + Documentação Grátis.</p>
+          </div>
+
+          <div class="detalhe-mosaico">
+            <figure class="detalhe-tile detalhe-tile--largo">
+              <img src="assets/img/conquista-vila-verde/card.jpg" alt="Guarita e fachada do Conquista Vila Verde" loading="lazy">
+              <figcaption>Guarita e fachada</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/conquista-vila-verde/01-piscina.jpg" alt="Piscinas do Conquista Vila Verde" loading="lazy">
+              <figcaption>Piscinas</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/conquista-vila-verde/02-salao-festas.jpg" alt="Salão de festas do Conquista Vila Verde"
+                loading="lazy">
+              <figcaption>Salão de festas</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/conquista-vila-verde/03-playground.jpg" alt="Playground do Conquista Vila Verde" loading="lazy">
+              <figcaption>Playground</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/conquista-vila-verde/04-quadra.jpg" alt="Quadra do Conquista Vila Verde" loading="lazy">
+              <figcaption>Quadra descoberta</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ─────────────────────────── 05 · CONQUISTA LAURO DE FREITAS ─────────────────────────── -->
+        <article class="detalhe-bloco" data-revelar>
+          <div class="detalhe-info">
+            <p class="detalhe-contador"><span>05</span> / 07</p>
+            <p class="detalhe-marca">Direcional · Lauro de Freitas</p>
+            <h3 class="detalhe-titulo">Conquista Lauro de Freitas</h3>
+            <p class="detalhe-local">Estrada do Coco / Av. Santos Dumont — Lauro de Freitas/BA</p>
+
+            <dl class="detalhe-ficha">
+              <div>
+                <dt>Quartos</dt>
+                <dd>1 e 2 quartos, com opções garden</dd>
+              </div>
+              <div>
+                <dt>Área privativa</dt>
+                <dd>36,24 m² (garden privativo de 12,38 m²)</dd>
+              </div>
+              <div>
+                <dt>Unidades</dt>
+                <dd>520, sendo 104 gardens (16 PCD)</dd>
+              </div>
+              <div>
+                <dt>Blocos</dt>
+                <dd>26 blocos — 5 pavimentos (térreo + 4)</dd>
+              </div>
+              <div>
+                <dt>Vagas</dt>
+                <dd>260 para carro, 29 para moto e 52 para bike</dd>
+              </div>
+              <div>
+                <dt>Terreno</dt>
+                <dd>22.793,39 m²</dd>
+              </div>
+            </dl>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Lazer de clube com mais de 15 itens</p>
+              <ul class="detalhe-tags">
+                <li>Piscina adulto e infantil</li>
+                <li>Salão gourmet com área externa</li>
+                <li>Quadra recreativa coberta</li>
+                <li>Churrasqueiras com área coberta</li>
+                <li>Espaço piquenique</li>
+                <li>Fitness descoberto + espaço fresh</li>
+                <li>Espaço jogos</li>
+                <li>Espaço pet</li>
+                <li>Playground e playbaby</li>
+                <li>Espaço happy hour</li>
+                <li>Bicicletário e estação bike</li>
+                <li>Redário, espaço zen e yoga</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Ao redor</p>
+              <ul class="detalhe-perto">
+                <li><span>Posto de Gasolina + Conveniência</span><span>2 min</span></li>
+                <li><span>Agência Banco Itaú</span><span>3 min</span></li>
+                <li><span>Supermercado Atacadão</span><span>9 min</span></li>
+                <li><span>Parque Shopping Bahia</span><span>10 min</span></li>
+                <li><span>Faculdade Unifacs</span><span>11 min</span></li>
+                <li><span>Hospital Aeroporto</span><span>15 min</span></li>
+                <li><span>Praia de Ipitanga</span><span>23 min</span></li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Diferenciais e acabamento</p>
+              <ul class="detalhe-tags detalhe-tags--claras">
+                <li>Piso laminado na sala e quartos (pavimento tipo)</li>
+                <li>Previsão de split nos quartos</li>
+                <li>Esquadrias na cor branca</li>
+                <li>Área de serviço entregue com janela</li>
+                <li>Medição de água individualizada</li>
+                <li>Economizadores de água e energia em LED</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-acoes">
+              <a class="botao botao--ouro" href="#cadastro">Falar com um corretor</a>
+              <a class="botao botao--fantasma" href="assets/books/conquista-lauro-de-freitas.pdf" target="_blank"
+                rel="noopener">Abrir o book</a>
+            </div>
+
+            <p class="detalhe-nota">Entrada facilitada em até 84x com a construtora e parcelas que cabem no bolso.</p>
+          </div>
+
+          <div class="detalhe-mosaico">
+            <figure class="detalhe-tile detalhe-tile--largo">
+              <img src="assets/img/conquista-lauro-de-freitas/card.jpg" alt="Fachada das Torres do Conquista Lauro de Freitas" loading="lazy">
+              <figcaption>Fachada das Torres</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/conquista-lauro-de-freitas/01-piscina.jpg" alt="Piscina do Conquista Lauro de Freitas" loading="lazy">
+              <figcaption>Piscina adulto e infantil</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/conquista-lauro-de-freitas/02-playground.jpg" alt="Playground do Conquista Lauro de Freitas"
+                loading="lazy">
+              <figcaption>Playground</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/conquista-lauro-de-freitas/03-pet.jpg" alt="Espaço pet do Conquista Lauro de Freitas" loading="lazy">
+              <figcaption>Espaço Pet</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/conquista-lauro-de-freitas/04-gourmet.jpg" alt="Salão gourmet do Conquista Lauro de Freitas" loading="lazy">
+              <figcaption>Salão Gourmet</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ─────────────────────────── 06 · MORADA DAS ESTAÇÕES ─────────────────────────── -->
+        <article class="detalhe-bloco detalhe-bloco--espelhado" data-revelar>
+          <div class="detalhe-info">
+            <p class="detalhe-contador"><span>06</span> / 07</p>
+            <p class="detalhe-marca">Tenda · Salvador</p>
+            <h3 class="detalhe-titulo">Morada das Estações</h3>
+            <p class="detalhe-local">Av. Aliomar Baleeiro, 13.371 — São Cristóvão, CEP 41.500-660</p>
+
+            <dl class="detalhe-ficha">
+              <div>
+                <dt>Quartos</dt>
+                <dd>2 quartos</dd>
+              </div>
+              <div>
+                <dt>Área privativa</dt>
+                <dd>38,54 m², 38,70 m² e 38,73 m²</dd>
+              </div>
+              <div>
+                <dt>Unidades</dt>
+                <dd>679, sendo 34 reversíveis para PCD</dd>
+              </div>
+              <div>
+                <dt>Blocos</dt>
+                <dd>6 torres — tipologias 8, 10 e 12 PP (T+9 a T+12)</dd>
+              </div>
+              <div>
+                <dt>Vagas</dt>
+                <dd>157 vagas (93 rotativas, 40 exclusivas, 24 moto)</dd>
+              </div>
+              <div>
+                <dt>Terreno</dt>
+                <dd>29.341,97 m²</dd>
+              </div>
+            </dl>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Lazer entregue equipado e ambientado</p>
+              <ul class="detalhe-tags">
+                <li>Quadra gramada e recreativa</li>
+                <li>Funcional externo e fitness externo</li>
+                <li>Play kids e play baby</li>
+                <li>Espaço delivery e espaço oficina</li>
+                <li>Salão de festas com coworking</li>
+                <li>Salão de festas gourmet</li>
+                <li>Churrasqueira gourmet</li>
+                <li>Espaço cultivo (horta) e praça dos sabores</li>
+                <li>Bicicletários e vaga de carro compartilhado</li>
+                <li>Sugestão de espaço para minimercado</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Ao redor</p>
+              <ul class="detalhe-perto">
+                <li><span>Escola Estadual Newton Sucupira</span><span>500 m · 8 min</span></li>
+                <li><span>UPA São Cristóvão</span><span>750 m · 10 min</span></li>
+                <li><span>Assaí Atacadista Mussurunga</span><span>1,1 km · 4 min</span></li>
+                <li><span>Salvador Norte Shopping</span><span>2,6 km · 8 min</span></li>
+                <li><span>Estação de Metrô Mussurunga</span><span>2,6 km · 9 min</span></li>
+                <li><span>Aeroporto Internacional</span><span>6,5 km · 19 min</span></li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Diferenciais do book</p>
+              <ul class="detalhe-tags detalhe-tags--claras">
+                <li>Portaria com portão duplo de segurança</li>
+                <li>Opção de vaga para carro compartilhado</li>
+                <li>Banheiro entregue com piso e box revestido</li>
+                <li>Cozinha e área de serviço entregues com piso</li>
+                <li>Medição de água individualizada e reuso</li>
+                <li>Iluminação em LED nas áreas comuns</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-acoes">
+              <a class="botao botao--ouro" href="#cadastro">Falar com um corretor</a>
+              <a class="botao botao--fantasma" href="assets/books/morada-das-estacoes.pdf" target="_blank"
+                rel="noopener">Abrir o book</a>
+            </div>
+
+            <p class="detalhe-nota">Renda familiar a partir de R$ 3.300 com entrada 100% facilitada e ITBI grátis.</p>
+          </div>
+
+          <div class="detalhe-mosaico">
+            <figure class="detalhe-tile detalhe-tile--largo">
+              <img src="assets/img/morada-das-estacoes/card.jpg" alt="Vista aérea panorâmica do Morada das Estações" loading="lazy">
+              <figcaption>Vista Aérea</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/morada-das-estacoes/01-churrasqueira.jpg" alt="Churrasqueira do Morada das Estações" loading="lazy">
+              <figcaption>Churrasqueira</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/morada-das-estacoes/02-quadra.jpg" alt="Quadra gramada do Morada das Estações"
+                loading="lazy">
+              <figcaption>Quadra gramada</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/morada-das-estacoes/03-playground.jpg" alt="Play kids do Morada das Estações" loading="lazy">
+              <figcaption>Play kids</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/morada-das-estacoes/04-salao-festas.jpg" alt="Salão de festas do Morada das Estações" loading="lazy">
+              <figcaption>Salão de festas</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- ─────────────────────────── 07 · ENCANTO PIATÃ ─────────────────────────── -->
+        <article class="detalhe-bloco" data-revelar>
+          <div class="detalhe-info">
+            <p class="detalhe-contador"><span>07</span> / 07</p>
+            <p class="detalhe-marca">Tenda · Salvador</p>
+            <h3 class="detalhe-titulo">Encanto Piatã</h3>
+            <p class="detalhe-local">Rua Colina das Esmeraldas, 163 — Piatã, CEP 41.650-200</p>
+
+            <dl class="detalhe-ficha">
+              <div>
+                <dt>Quartos</dt>
+                <dd>2 quartos</dd>
+              </div>
+              <div>
+                <dt>Área privativa</dt>
+                <dd>38,54 m², 38,70 m² e 38,73 m²</dd>
+              </div>
+              <div>
+                <dt>Unidades</dt>
+                <dd>1.611, sendo 81 reversíveis para PCD</dd>
+              </div>
+              <div>
+                <dt>Blocos</dt>
+                <dd>8 torres — tipologias 10, 12 e 14 PP (T+15)</dd>
+              </div>
+              <div>
+                <dt>Vagas</dt>
+                <dd>425 vagas (310 carros, 98 motos e 17 PCD)</dd>
+              </div>
+              <div>
+                <dt>Terreno</dt>
+                <dd>24.061,27 m²</dd>
+              </div>
+              <div>
+                <dt>Destaque</dt>
+                <dd>1º Tenda em Salvador com 15 andares e elevador</dd>
+              </div>
+            </dl>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Lazer completo e infraestrutura</p>
+              <ul class="detalhe-tags">
+                <li>Salão de festas com coworking</li>
+                <li>Salão de festas gourmet</li>
+                <li>Espaço saúde e espaço fitness</li>
+                <li>Fitness externo e quadras cobertas</li>
+                <li>Brinquedoteca, play kids e play baby</li>
+                <li>Play pet e sport bar</li>
+                <li>Espaço teen e espaço oficina</li>
+                <li>Espaço delivery e minimercado</li>
+                <li>Carro compartilhado e bicicletários</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Ao redor</p>
+              <ul class="detalhe-perto">
+                <li><span>SENAI CIMATEC</span><span>1,2 km · 4 min</span></li>
+                <li><span>UPA Piatã</span><span>2,2 km · 5 min</span></li>
+                <li><span>Hiperideal Orlando Gomes / Drogasil</span><span>900 m · 7 min</span></li>
+                <li><span>Shopping Paralela / Atakarejo</span><span>4,9 km · 10 min</span></li>
+                <li><span>Praia de Piatã</span><span>6,6 km · 10 min</span></li>
+                <li><span>Praia de Itapuã</span><span>5,3 km · 11 min</span></li>
+              </ul>
+            </div>
+
+            <div class="detalhe-grupo">
+              <p class="detalhe-rotulo">Diferenciais do book</p>
+              <ul class="detalhe-tags detalhe-tags--claras">
+                <li>Wi-Fi nas áreas comuns</li>
+                <li>Portaria com controle de segurança 24h</li>
+                <li>Paisagismo enriquecido com horta</li>
+                <li>Dispositivos economizadores de água e LED</li>
+                <li>Individualização de água e reservatório de reuso</li>
+                <li>Opção de vaga para carro compartilhado</li>
+              </ul>
+            </div>
+
+            <div class="detalhe-acoes">
+              <a class="botao botao--ouro" href="#cadastro">Falar com um corretor</a>
+              <a class="botao botao--fantasma" href="assets/books/encanto-piata.pdf" target="_blank"
+                rel="noopener">Abrir o book</a>
+            </div>
+
+            <p class="detalhe-nota">Suba para um novo nível de vida: o 1º empreendimento Tenda com 15 andares em Salvador.</p>
+          </div>
+
+          <div class="detalhe-mosaico">
+            <figure class="detalhe-tile detalhe-tile--largo">
+              <img src="assets/img/encanto-piata/card.jpg" alt="Vista panorâmica das torres de 15 andares do Encanto Piatã" loading="lazy">
+              <figcaption>Vista das Torres (15 andares)</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/encanto-piata/01-portaria.jpg" alt="Portaria 24h do Encanto Piatã" loading="lazy">
+              <figcaption>Portaria 24h</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/encanto-piata/02-salao-festas.jpg" alt="Salão de festas com coworking do Encanto Piatã"
+                loading="lazy">
+              <figcaption>Salão de festas</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/encanto-piata/03-brinquedoteca.jpg" alt="Brinquedoteca do Encanto Piatã" loading="lazy">
+              <figcaption>Brinquedoteca</figcaption>
+            </figure>
+            <figure class="detalhe-tile">
+              <img src="assets/img/encanto-piata/04-sportbar.jpg" alt="Sport Bar do Encanto Piatã" loading="lazy">
+              <figcaption>Sport Bar</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <p class="nota-legal">
+          Imagens meramente ilustrativas dos books oficiais. Consulte o memorial descritivo quanto aos
+          itens entregues. Distâncias e tempos informados pelas construtoras. Condições sujeitas a
+          análise de crédito e às regras de cada construtora e do programa Minha Casa, Minha Vida.
         </p>
-      </form>
 
-      <div class="forma__ok" id="forma-ok" hidden tabindex="-1">
-        <span class="forma__selo" aria-hidden="true">✓</span>
-        <h3>Cadastro enviado</h3>
-        <p id="forma-ok-msg">Um corretor da Conrado fala com você ainda hoje.</p>
-        <button class="btn btn--linha-clara" type="button" id="outro">Fazer outro cadastro</button>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════ COMO FUNCIONA ══════════════════════════════════ -->
+    <section class="programa" id="programa">
+      <div class="faixa programa__grade">
+        <div class="programa__texto" data-revelar>
+          <p class="sobrancelha sobrancelha--ouro">Minha Casa, Minha Vida</p>
+          <h2>O programa abre a porta.<br>A gente te leva até ela.</h2>
+          <p class="programa__linha">
+            O Minha Casa, Minha Vida é o programa do Governo Federal que oferece subsídio e juros
+            menores no financiamento da casa própria, com recursos operados pela Caixa. No feirão,
+            nossos corretores fazem a simulação com você e cuidam do resto.
+          </p>
+
+          <ol class="passos">
+            <li>
+              <span class="passos__num">1</span>
+              <div>
+                <h3>Você se cadastra</h3>
+                <p>Preencha o formulário. Um corretor entra em contato no mesmo dia.</p>
+              </div>
+            </li>
+            <li>
+              <span class="passos__num">2</span>
+              <div>
+                <h3>A gente simula</h3>
+                <p>Analisamos sua renda, o subsídio a que você tem direito e a parcela que cabe no bolso.</p>
+              </div>
+            </li>
+            <li>
+              <span class="passos__num">3</span>
+              <div>
+                <h3>Você escolhe o imóvel</h3>
+                <p>Visita, planta e condições de cada construtora, comparadas lado a lado.</p>
+              </div>
+            </li>
+            <li>
+              <span class="passos__num">4</span>
+              <div>
+                <h3>Assinatura e chaves</h3>
+                <p>Cuidamos da documentação, do contrato e do acompanhamento até a entrega.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="programa__cartao" data-revelar>
+          <img class="programa__selo" src="assets/logos/partners/mcmv.png" alt="Minha Casa Minha Vida" width="460"
+            height="115" loading="lazy">
+          <h3>Condições do feirão</h3>
+          <ul class="lista-marcada">
+            <li>Entrada parcelada em até 100x</li>
+            <li>Sem tarifas bancárias</li>
+            <li>ITBI e documentação por conta da construtora</li>
+            <li>Uso do FGTS na entrada</li>
+            <li>Simulação e análise de crédito no mesmo dia</li>
+          </ul>
+          <p class="programa__rodape">
+            Condições vigentes durante o feirão, sujeitas a análise de crédito e às regras de cada
+            construtora e do programa.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ CADASTRO ══════════════════════════════════ -->
+    <section class="cadastro" id="cadastro">
+      <div class="faixa cadastro__grade">
+        <div class="cadastro__texto">
+          <p class="sobrancelha sobrancelha--ouro">Cadastro</p>
+          <h2>Cadastre-se<br>e aproveite</h2>
+          <p>
+            Preencha seus dados e fale com um dos nossos especialistas. Vamos te ajudar a conquistar
+            o seu novo lar.
+          </p>
+          <img class="cadastro__selo" src="assets/img/chaveiro-3d.png" alt="Chaveiro Feirão Conrado"
+            loading="lazy">
+        </div>
+
+        <div class="cadastro__caixa">
+          <form class="formulario" id="formulario-lead" novalidate>
+            <div class="campo">
+              <label for="nome">Nome completo <span class="campo__obrig" aria-hidden="true">*</span></label>
+              <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="Digite seu nome">
+              <p class="campo__erro" data-erro-de="nome"></p>
+            </div>
+
+            <div class="campo">
+              <label for="telefone">WhatsApp <span class="campo__obrig" aria-hidden="true">*</span></label>
+              <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" required
+                placeholder="(71) 90000-0000" maxlength="16">
+              <p class="campo__erro" data-erro-de="telefone"></p>
+            </div>
+
+            <div class="campo campo--duplo">
+              <div>
+                <label for="cidade">Onde mora? <span class="campo__obrig" aria-hidden="true">*</span></label>
+                <input id="cidade" name="cidade" type="text" autocomplete="address-level2" required
+                  placeholder="Sua cidade">
+                <p class="campo__erro" data-erro-de="cidade"></p>
+              </div>
+              <div>
+                <label for="bairro">Bairro <span class="campo__obrig" aria-hidden="true">*</span></label>
+                <input id="bairro" name="bairro" type="text" autocomplete="address-level3" required
+                  placeholder="Seu bairro">
+                <p class="campo__erro" data-erro-de="bairro"></p>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="renda">Renda familiar <span class="campo__obrig" aria-hidden="true">*</span></label>
+              <select id="renda" name="renda" required>
+                <option value="" selected disabled>Selecione uma faixa</option>
+                <option>Até R$ 2.640</option>
+                <option>De R$ 2.640 a R$ 4.400</option>
+                <option>De R$ 4.400 a R$ 8.000</option>
+                <option>De R$ 8.000 a R$ 12.000</option>
+                <option>Acima de R$ 12.000</option>
+              </select>
+              <p class="campo__erro" data-erro-de="renda"></p>
+            </div>
+
+            <div class="campo">
+              <label for="corretor">Quem te atendeu? <span class="campo__opcional">opcional</span></label>
+              <input id="corretor" name="corretor" type="text" placeholder="Nome do corretor">
+            </div>
+
+            <div class="campo">
+              <label class="aceite">
+                <input type="checkbox" id="aceite" name="aceite" required>
+                <span>Autorizo a Conrado Imobiliária a entrar em contato comigo sobre o Feirão Conrado.</span>
+              </label>
+              <p class="campo__erro" data-erro-de="aceite"></p>
+            </div>
+
+            <button class="botao botao--ouro botao--bloco botao--grande" type="submit">Quero ser contatado</button>
+
+            <p class="formulario__seguranca">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 5 6v6c0 4.5 3 8 7 9 4-1 7-4.5 7-9V6z" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              Seus dados ficam só com a nossa equipe.
+            </p>
+          </form>
+
+          <div class="formulario__sucesso" id="formulario-sucesso" hidden>
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="21" />
+              <path d="m15 24 6 6 12-12" />
+            </svg>
+            <h3>Cadastro enviado!</h3>
+            <p id="mensagem-sucesso">Um corretor da Conrado vai falar com você ainda hoje.</p>
+            <button class="botao botao--fantasma" type="button" id="novo-cadastro">Fazer outro cadastro</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════ RODAPÉ ══════════════════════════════════ -->
+  <footer class="rodape">
+    <div class="faixa rodape__grade">
+      <div>
+        <img class="rodape__marca" src="assets/logos/conrado.png" alt="Conrado Imobiliária" width="481" height="460"
+          loading="lazy">
+        <p class="rodape__frase">Realizar o sonho de morar bem<br>é o que nos move.</p>
+      </div>
+
+      <ul class="rodape__contato">
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" />
+          </svg>
+          <a data-config="telefone" href="#">telefone</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+          <a data-config="email" href="#">e-mail</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" />
+          </svg>
+          <a data-config="instagram" href="#" target="_blank" rel="noopener">instagram</a>
+        </li>
+      </ul>
+
+      <nav class="rodape__nav" aria-label="Rodapé">
+        <a href="#feirao">O Feirão</a>
+        <a href="#parceiros">Construtoras</a>
+        <a href="#empreendimentos">Imóveis</a>
+        <a href="#programa">Como funciona</a>
+        <a href="#cadastro">Cadastro</a>
+      </nav>
+    </div>
+
+    <div class="faixa rodape__base">
+      <p>© <span id="ano">2026</span> Conrado Imobiliária. Todos os direitos reservados.</p>
+      <p>Imagens ilustrativas dos books oficiais. Condições sujeitas a análise de crédito.</p>
+    </div>
+  </footer>
+
+  <a class="zap" data-config="whatsapp"
+    href="https://wa.me/5571999491927?text=Ol%C3%A1,%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20Feir%C3%A3o%20Conrado"
+    target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" width="36" height="36" aria-hidden="true">
+      <path fill="#FFFFFF" d="M16 2a13.93 13.93 0 0 0-11.97 21.08L2 30l7.15-1.87A13.94 13.94 0 1 0 16 2zm0 25.56c-2.1 0-4.15-.55-5.96-1.6l-.43-.25-4.43 1.16 1.18-4.32-.28-.44a11.6 11.6 0 1 1 9.92 5.45zm6.37-8.7c-.35-.18-2.07-1.02-2.39-1.14s-.55-.18-.78.18-.9 1.14-1.1 1.37-.41.26-.76.09a9.6 9.6 0 0 1-2.82-1.74 10.6 10.6 0 0 1-1.95-2.43c-.2-.35-.02-.54.15-.72.16-.16.35-.41.53-.62.18-.2.24-.35.35-.58.12-.24.06-.44-.03-.62s-.78-1.88-1.07-2.57c-.28-.68-.57-.59-.78-.6h-.66c-.23 0-.6.09-.92.44s-1.2 1.17-1.2 2.85 1.23 3.3 1.4 3.53c.18.24 2.43 3.71 5.88 5.2 2.89 1.25 3.48 1 4.1.94.63-.06 2.07-.84 2.36-1.66.29-.81.29-1.5.21-1.65-.09-.15-.33-.24-.68-.42z"/>
+    </svg>
+  </a>
+
+  <!-- ══════════════════════════════════ GALERIA ══════════════════════════════════ -->
+  <dialog class="galeria" id="galeria" aria-label="Galeria do empreendimento">
+    <button class="galeria__fechar" type="button" data-fechar-galeria aria-label="Fechar">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m6 6 12 12M18 6 6 18" />
+      </svg>
+    </button>
+
+    <div class="galeria__conteudo">
+      <div class="galeria__palco">
+        <img id="galeria-foto" src="" alt="">
+        <button class="galeria__seta galeria__seta--antes" type="button" data-galeria-passo="-1"
+          aria-label="Foto anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m15 5-7 7 7 7" />
+          </svg>
+        </button>
+        <button class="galeria__seta galeria__seta--depois" type="button" data-galeria-passo="1"
+          aria-label="Próxima foto">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9 5 7 7-7 7" />
+          </svg>
+        </button>
+        <p class="galeria__legenda"><span id="galeria-legenda"></span><span class="galeria__contador"
+            id="galeria-contador"></span></p>
+      </div>
+
+      <div class="galeria__lado">
+        <p class="galeria__construtora" id="galeria-construtora"></p>
+        <h2 id="galeria-nome"></h2>
+        <p class="galeria__local" id="galeria-local"></p>
+        <dl class="ficha ficha--vertical" id="galeria-ficha"></dl>
+        <h3 class="galeria__titulo-lazer">Lazer do condomínio</h3>
+        <ul class="lista-marcada" id="galeria-lazer"></ul>
+        <div class="galeria__acoes">
+          <a class="botao botao--ouro botao--bloco" href="#cadastro" data-fechar-galeria>Falar com um corretor</a>
+          <a class="botao botao--contorno botao--bloco" id="galeria-book" href="#" target="_blank" rel="noopener">Baixar
+            o book em PDF</a>
+        </div>
       </div>
     </div>
+  </dialog>
 
-  </div>
-</section>
-
-<!-- ════════════════════════════════ EVENTO ════════════════════════════════ -->
-<section class="evento">
-  <div class="limite evento__grade">
-    <div>
-      <p class="rotulo">Quando</p>
-      <p class="evento__valor">1 a 31 de <span>agosto</span></p>
-    </div>
-    <div>
-      <p class="rotulo">Onde</p>
-      <p class="evento__valor" data-config="local">No nosso stand</p>
-    </div>
-    <div>
-      <p class="rotulo">Atendimento</p>
-      <p class="evento__valor">Todos os dias, <span>com hora marcada</span></p>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- ════════════════════════════════ RODAPÉ ════════════════════════════════ -->
-<footer class="rodape">
-  <div class="limite rodape__grade">
-    <div class="rodape__marca">
-      <img src="assets/marca/conrado.png" alt="Conrado Imobiliária" width="481" height="460" loading="lazy">
-      <p class="rodape__frase">Realizar o sonho de morar bem<br>é o que nos move.</p>
-    </div>
-
-    <div>
-      <p class="rotulo">Contato</p>
-      <ul class="rodape__lista">
-        <li><a data-config="telefone" href="#">telefone</a></li>
-        <li><a data-config="email" href="#">e-mail</a></li>
-        <li><a data-config="instagram" href="#" target="_blank" rel="noopener">instagram</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <p class="rotulo">Navegar</p>
-      <ul class="rodape__lista">
-        <li><a href="#vantagens">Sobre o feirão</a></li>
-        <li><a href="#imoveis">Imóveis</a></li>
-        <li><a href="#construtoras">Construtoras</a></li>
-        <li><a href="#caminho">Como participar</a></li>
-        <li><a href="#cadastro">Cadastro</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="limite rodape__base">
-    <p>© <span id="ano">2026</span> Conrado Imobiliária</p>
-    <p>Imagens ilustrativas dos books oficiais · Condições sujeitas a análise de crédito</p>
-  </div>
-</footer>
-
-<a class="zap-flutua" data-config="whatsapp" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11 19.7L3 29l6.5-1.9A13 13 0 1 0 16 3z"/><path d="M11.5 10.5c.4-.9.8-.9 1.2-.9h1c.3 0 .7 0 1 .8l1.2 2.9c.1.4 0 .7-.2.9l-.8.8a10 10 0 0 0 4.1 4.1l.8-.8c.2-.2.5-.3.9-.2l2.9 1.2c.8.3.8.7.8 1v1c0 .4 0 .8-.9 1.2-2 .9-4.6.2-7.4-1.8a17 17 0 0 1-5.4-6.7c-.6-1.5-.6-2.7-.2-3.5z"/></svg>
-</a>
-
-<script src="js/app.js"></script>
+  <script src="js/main.js?v=10"></script>
 </body>
+
 </html>
