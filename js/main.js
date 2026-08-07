@@ -172,7 +172,7 @@ const EMPREENDIMENTOS = {
     ],
     book: "assets/books/conquista-lauro-de-freitas.pdf",
     fotos: [
-      ["assets/img/conquista-lauro-de-freitas/card.jpg", "Guarita e Portaria"],
+      ["assets/img/conquista-lauro-de-freitas/card.jpg", "Fachada das Torres"],
       ["assets/img/conquista-lauro-de-freitas/01-piscina.jpg", "Piscina adulto e infantil"],
       ["assets/img/conquista-lauro-de-freitas/02-playground.jpg", "Playground"],
       ["assets/img/conquista-lauro-de-freitas/03-pet.jpg", "Espaço Pet"],
