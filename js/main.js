@@ -236,7 +236,7 @@ const EMPREENDIMENTOS = {
     ],
     book: "assets/books/encanto-piata.pdf",
     fotos: [
-      ["assets/img/encanto-piata/card.jpg", "Torres de 15 andares"],
+      ["assets/img/encanto-piata/card.jpg", "Vista das Torres (15 andares)"],
       ["assets/img/encanto-piata/01-portaria.jpg", "Portaria 24h"],
       ["assets/img/encanto-piata/02-salao-festas.jpg", "Salão de festas com coworking"],
       ["assets/img/encanto-piata/03-brinquedoteca.jpg", "Brinquedoteca"],
