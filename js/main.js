@@ -80,7 +80,7 @@ const EMPREENDIMENTOS = {
     ],
     book: "assets/books/vila-santiago.pdf",
     fotos: [
-      ["assets/img/vila-santiago/card.jpg", "Portaria"],
+      ["assets/img/vila-santiago/card.jpg", "Fachada"],
       ["assets/img/vila-santiago/01-piscina.jpg", "Piscina"],
       ["assets/img/vila-santiago/02-churrasqueira.jpg", "Churrasqueira"],
       ["assets/img/vila-santiago/03-playground.jpg", "Play kids"],
