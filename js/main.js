@@ -204,7 +204,7 @@ const EMPREENDIMENTOS = {
     ],
     book: "assets/books/morada-das-estacoes.pdf",
     fotos: [
-      ["assets/img/morada-das-estacoes/card.jpg", "Portaria"],
+      ["assets/img/morada-das-estacoes/card.jpg", "Vista Aérea"],
       ["assets/img/morada-das-estacoes/01-churrasqueira.jpg", "Churrasqueira"],
       ["assets/img/morada-das-estacoes/02-quadra.jpg", "Quadra gramada"],
       ["assets/img/morada-das-estacoes/03-playground.jpg", "Play kids"],
