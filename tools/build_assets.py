@@ -163,11 +163,11 @@ EMPREENDIMENTOS = {
         ("04-salao-festas", 207),
     ],
     "encanto-piata": [
-        ("card", 89),           # vista das torres de 15 andares
-        ("01-portaria", 93),    # portaria 24h
-        ("02-salao-festas", 149),
-        ("03-brinquedoteca", 169),
-        ("04-sportbar", 177),
+        ("card", 110),          # fachada / vista das torres 15 andares
+        ("01-portaria", 114),   # portaria 24h
+        ("02-salao-festas", 183),
+        ("03-brinquedoteca", 208),
+        ("04-sportbar", 218),
     ],
 }
 
